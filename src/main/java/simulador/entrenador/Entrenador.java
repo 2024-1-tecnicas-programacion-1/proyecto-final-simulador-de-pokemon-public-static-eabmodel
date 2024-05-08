@@ -1,11 +1,12 @@
 package simulador.entrenador;
 
 import java.util.*;
-
 import simulador.pokemon.Pokemon;
+import simulador.pokemon.TipoPokemon;
 
 public class Entrenador {
     private String nombre;
+    private LinkedList <Pokemon> pokemones = new LinkedList<>();
 
     Scanner sc = new Scanner(System.in);
 
@@ -13,19 +14,45 @@ public class Entrenador {
         this.nombre = nombre;
     }//cierra constructor
 
-    LinkedList <Pokemon> pokemones = new LinkedList<>();
 
+    //Getters y Setters//
+
+    public String getNombre(){
+        return this.nombre;
+    }//cierra getNombre
+
+    public void setNombre (String nombre){
+        this.nombre = nombre;
+    }//cierra setNombre
+
+    public LinkedList<Pokemon> getPokemones(){
+        return this.pokemones;
+    }//cierra getPokemones ✅
+    
+    public void setPokemones(){
+        this.pokemones = pokemones;
+    }//cierra getPokemones 👀
+
+
+    //Metodos//
+    
     public void agregarPokemon(Pokemon pokemon){
         pokemones.add(pokemon);
-    }//cierra agregarPokemon
+    }//cierra agregarPokemon 👀
 
-    public void entrenarPokemon(){}//cierra entrenarPokemon #TODO: esperar explicacion del profe
+    public void entrenarPokemon(Pokemon pokemon){
+        mostrarPokemon();
+        System.out.println("Indique el pokémon a entrenar:");
+        String palabraDeBusqueda = sc.nextLine();        
+        //TipoPokemon.entrenar(buscarPokemon(palabraDeBusqueda));
+        
+    }//cierra entrenarPokemon  //esperar explicacion del profe 👀
 
     public void mostrarPokemon(){
         for (Pokemon pokemon : pokemones) {
             System.out.println(pokemon.getNombre());
         }//cierra for
-    }//cierra mostrarPokemon
+    }//cierra mostrarPokemon ✅
 
     public Pokemon buscarPokemon(String palabraDeBusqueda){
         for (Pokemon pokemon : pokemones) {
@@ -33,16 +60,14 @@ public class Entrenador {
                 return pokemon;
             }//cierra if
         }//cierra for
-        return null;
-    }//cierra buscarPokemon
+        return null; //¿Esto está bien? 👀
+    }//cierra buscarPokemon 👀
 
-    public void prepararBatalla(){
+    public Pokemon prepararBatalla(){
         mostrarPokemon();
         System.out.println("Seleccione el pokémon para la batalla:");
         String word = sc.nextLine();
-        buscarPokemon(word);
-
-        //TODO
-    }//cierra prepararBatalla #TODO: esperar explicacion del profe
+        return buscarPokemon(word);
+    }//cierra prepararBatalla ✅
         
 }//cierra class
