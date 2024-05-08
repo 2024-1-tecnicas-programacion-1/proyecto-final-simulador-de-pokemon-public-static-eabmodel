@@ -23,7 +23,7 @@ public class Principal {
 
             System.out.println(" \n \n \n \n \n  "); //Espacio visual
 
-            wait(2);
+            wait(3);
 
             System.out.println(" \n \n \n \n "); //Espacio visual //P
 
@@ -177,17 +177,37 @@ public class Principal {
 
             switch (option){
                 case 1:
-                    System.out.println("Has seleccionado «Gestionar Entrenadores»");
+                    System.out.println(" \n \n \n \n \n "); //Espacio visual
+
+                    System.out.println("¡Has seleccionado «Gestionar Entrenadores»!");
+                    
+                    System.out.println(" \n \n \n \n \n "); //Espacio visual
+
+                    wait(3);
+
+                    System.out.println("[Nico] ,___          .-;'                                    `;-.          ___, [Bri]\n" + //
+                            "       `\"-.`\\_...._/`.`   » » » Seleccione una opción: « « «   `.`\\_...._/`.-\"`\n" + //
+                            "    ,      \\        /                                            \\        /      ,\n" + //
+                            " .-' ',    / ()   ()\\      (1) | Registrar nuevo entrenador.     /()   () \\    .' `-.\n" + //
+                            "`'._   \\  /()    .  (|                                          |)   .   ()\\   /   _.'`\n" + //
+                            "    > .' ;,     -'-  /     (2) | Ver lista de entrenadores.      \\  -'-    ,; '.  <\n" + //
+                            "   / <   |;,     __.;                                            ;.__     ,;|   >  \\\n" + //
+                            "   '-.'-.|  , \\    , \\     (3) | Seleccionar un entrenador.     / ,    / ,  |.-'.-'\n" + //
+                            "      `>.|;, \\_)    \\_)                                        (_/    (_/ ,;|_.<`\n" + //
+                            "       `-;     ,    /      (4) | Volver al menú principal.       \\    ,     ;-`\n" + //
+                            "          \\    /   <                                              >   \\    /\n" + //
+                            "           '. <`'-,_)     » » »      PokéMondonGo      « « «      (_,-'`> .'\n" + //
+                            "            '._)                                                       (_,'");
 
                     validation = true;
                     break;
                 case 2:
-                    System.out.println("Has seleccionado «Gestionar Pokémones»");
+                    System.out.println("¡Has seleccionado «Gestionar Pokémones»!");
 
                     validation = true;
                     break;
                 case 3:
-                    System.out.println("Has seleccionado «Iniciar Batalla»");
+                    System.out.println("¡Has seleccionado «Iniciar Batalla»!");
                     
                     validation = true;
                     break;
@@ -204,7 +224,7 @@ public class Principal {
                 default:
                     System.out.println(" \n \n \n \n \n \n "); //Espacio visual
                     
-                    System.out.println("Debe seleccionar una opción válida.");
+                    System.out.println("¡Debe seleccionar una opción válida!");
 
                     System.out.println(" \n \n \n \n \n \n "); //Espacio visual
 
