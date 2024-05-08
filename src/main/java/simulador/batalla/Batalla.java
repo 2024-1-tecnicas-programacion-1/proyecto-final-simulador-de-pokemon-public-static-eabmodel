@@ -11,11 +11,11 @@ public class Batalla {
       this.pokemon2 = pokemon2;
    }//cierra constructor
    
-   public Pokemon 
-   {//esperar metodookemon.atacar
+   public Pokemon iniciarBatalla(Pokemon pokemon1, Pokemon pokemon2){
+      //esperar metodookemon.atacar
 
    
-
+      return pokemon1;
    }//cierra iniciarBatalla
 
 }//cierra class
