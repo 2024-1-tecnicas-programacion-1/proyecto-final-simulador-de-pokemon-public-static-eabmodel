@@ -55,10 +55,13 @@ public abstract class Pokemon {
         this.estado = estado;
     }//cierra setEstado
 
-    public abstract int atacar(pokemonOponente); //Revisar tipo de dato
+    public abstract int atacar();
+    //Revisar tipo de dato //"pokemonOponente" //Esperar indicacion del profe
 
-    public abstract int recibirDaño(daño); //Revisar tipo de dato
+    public abstract int recibirDaño();
+    //Revisar tipo de dato //"int daño" //Esperar indicacion del profe
 
-    public abstract String entrenar();
+    public abstract String entrenar(Pokemon pokemon);
+    //Revisar tipo de dato //"daño" //Esperar indicacion del profe
 
 }//cierra class
