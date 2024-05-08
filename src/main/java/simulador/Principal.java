@@ -15,11 +15,11 @@ public class Principal {
 
         System.out.println(" \n \n \n \n \n  "); //Espacio visual
 
-        while (validation = false) {
+        while (validation == false) {
             
             wait(3);
             
-            System.out.println("»»» Bienvenidos a PokeMondonGo «««");
+            System.out.println(" » » » Bienvenidos a PokeMondonGo « « « ");
 
             System.out.println(" \n \n \n \n \n  "); //Espacio visual
 
@@ -28,11 +28,11 @@ public class Principal {
             System.out.println(" \n \n \n \n "); //Espacio visual //P
 
             System.out.println("   ___      \n" + //
-                            "  / _ \\\n" + //
-                            " / /_)/\n" + //
-                            "/ ___/\n" + //
-                        "\\/\n" + //
-                            "                                                                     ");
+                               "  / _ \\\n" + //
+                               " / /_)/\n" + //
+                               "/ ___/\n" + //
+                              "\\/\n" + //
+                              "                                                                     ");
 
             System.out.println(" \n \n \n \n "); //Espacio visual //PO
             
@@ -40,9 +40,9 @@ public class Principal {
 
             System.out.println("   ___      \n" + //
                             "  / _ \\___ \n" + //
-                            " / /_)/ _ \\\n" + //
-                            "/ ___/ (_) |\n" + //
-                        "\\/    \\___/\n" + //
+                             " / /_)/ _ \\\n" + //
+                             "/ ___/ (_) |\n" + //
+                           "\\/    \\___/\n" + //
                             "                                                                     ");
 
             System.out.println(" \n \n \n \n "); //Espacio visual //POK
@@ -50,11 +50,11 @@ public class Principal {
             wait(1);
 
             System.out.println("   ___      _\n" + //
-                            "  / _ \\___ | | __\n" + //
-                            " / /_)/ _ \\| |/ /\n" + //
-                            "/ ___/ (_) |   <\n" + //
-                        "\\/    \\___/|_|\\_\\\n" + //
-                            "                                                                     ");
+                              "  / _ \\___ | | __\n" + //
+                              " / /_)/ _ \\| |/ /\n" + //
+                               "/ ___/ (_) |   <\n" + //
+                             "\\/    \\___/|_|\\_\\\n" + //
+                             "                                                                     ");
 
             System.out.println(" \n \n \n \n "); //Espacio visual //POKE
 
@@ -63,8 +63,8 @@ public class Principal {
             System.out.println("   ___      _\n" + //
                             "  / _ \\___ | | _____  \n" + //
                             " / /_)/ _ \\| |/ / _ \\\n" + //
-                                "/ ___/ (_) |   <  __/\n" + //
-                        "\\/    \\___/|_|\\_\\___\\\n" + //
+                             "/ ___/ (_) |   <  __/\n" + //
+                         "\\/    \\___/|_|\\_\\___\\\n" + //
                             "                                                                     ");
 
             System.out.println(" \n \n \n \n "); //Espacio visual //POKEM
@@ -73,8 +73,8 @@ public class Principal {
 
             System.out.println("   ___      _\n" + //
                             "  / _ \\___ | | _____  /\\/\\\n" + //
-                            " / /_)/ _ \\| |/ / _ \\/    \\\n" + //
-                            "/ ___/ (_) |   <  __/ /\\/\\ \\\n" + //
+                           " / /_)/ _ \\| |/ / _ \\/    \\\n" + //
+                             "/ ___/ (_) |   <  __/ /\\/\\ \\\n" + //
                         "\\/    \\___/|_|\\_\\___\\/    \\/\n" + //
                             "                                                                     ");
 
@@ -95,7 +95,7 @@ public class Principal {
 
             System.out.println("   ___      _\n" + //
                             "  / _ \\___ | | _____  /\\/\\   ___  _ __\n" + //
-                            " / /_)/ _ \\| |/ / _ \\/    \\ / _ \\| '_ \\\n" + //
+                           " / /_)/ _ \\| |/ / _ \\/    \\ / _ \\| '_ \\\n" + //
                             "/ ___/ (_) |   <  __/ /\\/\\ \\ (_) | | | |\n" + //
                         "\\/    \\___/|_|\\_\\___\\/    \\/\\___/|_| |_|\n" + //
                             "                                                                     ");
@@ -106,9 +106,9 @@ public class Principal {
 
             System.out.println("   ___      _                               _\n" + //
                             "  / _ \\___ | | _____  /\\/\\   ___  _ __   __| |\n" + //
-                            " / /_)/ _ \\| |/ / _ \\/    \\ / _ \\| '_ \\ / _` |\n" + //
+                          " / /_)/ _ \\| |/ / _ \\/    \\ / _ \\| '_ \\ / _` |\n" + //
                             "/ ___/ (_) |   <  __/ /\\/\\ \\ (_) | | | | (_| |\n" + //
-                        "\\/    \\___/|_|\\_\\___\\/    \\/\\___/|_| |_|\\__,_|\n" + //
+                       "\\/    \\___/|_|\\_\\___\\/    \\/\\___/|_| |_|\\__,_|\n" + //
                             "                                                                     ");
 
             System.out.println(" \n \n \n \n "); //Espacio visual //POKEMONDO
@@ -117,9 +117,9 @@ public class Principal {
 
             System.out.println("   ___      _                               _\n" + //
                             "  / _ \\___ | | _____  /\\/\\   ___  _ __   __| | ___\n" + //
-                            " / /_)/ _ \\| |/ / _ \\/    \\ / _ \\| '_ \\ / _` |/ _ \\\n" + //
-                                "/ ___/ (_) |   <  __/ /\\/\\ \\ (_) | | | | (_| | (_) |\n" + //
-                        "\\/    \\___/|_|\\_\\___\\/    \\/\\___/|_| |_|\\__,_|\\___/\n" + //
+                          " / /_)/ _ \\| |/ / _ \\/    \\ / _ \\| '_ \\ / _` |/ _ \\\n" + //
+                            "/ ___/ (_) |   <  __/ /\\/\\ \\ (_) | | | | (_| | (_) |\n" + //
+                      "\\/    \\___/|_|\\_\\___\\/    \\/\\___/|_| |_|\\__,_|\\___/\n" + //
                             "                                                                     ");
 
             System.out.println(" \n \n \n \n "); //Espacio visual //POKEMONDON
@@ -128,9 +128,9 @@ public class Principal {
 
             System.out.println("   ___      _                               _               \n" + //
                             "  / _ \\___ | | _____  /\\/\\   ___  _ __   __| | ___  _ __\n" + //
-                            " / /_)/ _ \\| |/ / _ \\/    \\ / _ \\| '_ \\ / _` |/ _ \\| '_ \\\n" + //
+                         " / /_)/ _ \\| |/ / _ \\/    \\ / _ \\| '_ \\ / _` |/ _ \\| '_ \\\n" + //
                             "/ ___/ (_) |   <  __/ /\\/\\ \\ (_) | | | | (_| | (_) | | | |\n" + //
-                        "\\/    \\___/|_|\\_\\___\\/    \\/\\___/|_| |_|\\__,_|\\___/|_| |_|\n" + //
+                      "\\/    \\___/|_|\\_\\___\\/    \\/\\___/|_| |_|\\__,_|\\___/|_| |_|\n" + //
                             "                                                                     ");
 
             System.out.println(" \n \n \n \n "); //Espacio visual //POKEMONDONG
@@ -141,7 +141,7 @@ public class Principal {
                             "  / _ \\___ | | _____  /\\/\\   ___  _ __   __| | ___  _ __   / _ \\\n" + //
                         " / /_)/ _ \\| |/ / _ \\/    \\ / _ \\| '_ \\ / _` |/ _ \\| '_ \\ / /_\\\n" + //
                             "/ ___/ (_) |   <  __/ /\\/\\ \\ (_) | | | | (_| | (_) | | | / /_\\\\\n" + //
-                    "\\/    \\___/|_|\\_\\___\\/    \\/\\___/|_| |_|\\__,_|\\___/|_| |_\\____/\n" + //
+                      "\\/    \\___/|_|\\_\\___\\/    \\/\\___/|_| |_|\\__,_|\\___/|_| |_\\____/\n" + //
                             "                                                                     ");
 
             System.out.println(" \n \n \n \n "); //Espacio visual //POKEMONDONGO
@@ -150,9 +150,9 @@ public class Principal {
             
             System.out.println("   ___      _                               _               ___      \n" + //
                             "  / _ \\___ | | _____  /\\/\\   ___  _ __   __| | ___  _ __   / _ \\___  \n" + //
-                            " / /_)/ _ \\| |/ / _ \\/    \\ / _ \\| '_ \\ / _` |/ _ \\| '_ \\ / /_\\/ _ \\ \n" + //
-                            "/ ___/ (_) |   <  __/ /\\/\\ \\ (_) | | | | (_| | (_) | | | / /_\\\\ (_) |\n" + //
-                        "\\/    \\___/|_|\\_\\___\\/    \\/\\___/|_| |_|\\__,_|\\___/|_| |_\\____/\\___/ \n" + //
+                        " / /_)/ _ \\| |/ / _ \\/    \\ / _ \\| '_ \\ / _` |/ _ \\| '_ \\ / /_\\/ _ \\ \n" + //
+                           "/ ___/ (_) |   <  __/ /\\/\\ \\ (_) | | | | (_| | (_) | | | / /_\\\\ (_) |\n" + //
+                     "\\/    \\___/|_|\\_\\___\\/    \\/\\___/|_| |_|\\__,_|\\___/|_| |_\\____/\\___/ \n" + //
                             "                                                                     ");
 
             System.out.println(" \n \n \n \n "); //Espacio visual //POKEMONDONGO FINAL
@@ -193,18 +193,26 @@ public class Principal {
                     break;
 
                 case 4:
+                    System.out.println(" \n \n \n \n \n \n "); //Espacio visual
                     System.out.println("» » » Saliendo de PokeMondonGo « « «");
-                    
+                    System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+
+                    // Sería cool añadir un Snorlax aquí de despedida.
+
                     validation = true;
                     break;
                 default:
-                    System.out.println("No se seleccionó ninguna acción.");
+                    System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+                    
+                    System.out.println("Debe seleccionar una opción válida.");
 
-                    System.out.println(" \n \n \n \n \n  "); //Espacio visual
+                    System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+
+                    wait(2);
 
                     System.out.println("Reiniciando...");
 
-                    System.out.println(" \n \n \n \n \n  "); //Espacio visual
+                    System.out.println(" \n \n \n \n \n \n "); //Espacio visual
 
                     validation = false;
                     break;
