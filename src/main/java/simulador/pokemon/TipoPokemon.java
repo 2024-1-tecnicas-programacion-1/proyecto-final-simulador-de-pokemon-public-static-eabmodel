@@ -4,28 +4,27 @@ public class TipoPokemon extends Pokemon{
 
     TipoPokemon(String nombre, double salud, double puntosDeAtaque, String tipo, String estado) {
         super(nombre, salud, puntosDeAtaque, tipo, estado);
-        //TODO Auto-generated constructor stub
-    }
 
-    @Override
+    }//cierra constructor
+
     public int atacar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'atacar'");
-    }
 
-    @Override
+        return 0;
+    }//cierra atacar
+
     public int recibirDaño() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'recibirDaño'");
-    }
+        
+        return 0;
+    }//cierra recibirDaño
 
-    @Override
     public String entrenar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'entrenar'");
-    }
+
+        return "";
+    }//cierra entrenar
     
-    public String obtenerMultiplicadorDeDaño() {
-        return null;
-    }
-}
+    public String obtenerMultiplicadorDeDaño(TipoPokemon atacante, TipoPokemon defensor) {
+        
+        return "";
+    }//cierra obtenerMultiplicadorDeDaño
+
+}//cierra class
