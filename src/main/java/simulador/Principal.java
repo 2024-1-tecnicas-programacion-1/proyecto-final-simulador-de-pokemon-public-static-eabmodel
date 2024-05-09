@@ -46,7 +46,7 @@ public class Principal {
 
         wait(6);
         
-        System.out.println(" » » » Bienvenido(a) a PokeMondonGo « « « ");
+        System.out.println("» » » Bienvenido(a) a PokeMondonGo « « «");
 
         System.out.println(" \n \n \n \n \n \n"); //Espacio visual
 
@@ -188,6 +188,29 @@ public class Principal {
 
     }//cierra interfazPokeMondonGo
     
+    //#//#//#//#//#//#//#//#//#//#//#// VALIDACION //#//#//#//#//#//#//#//#//#//#//#//
+    
+    public static int check(){
+
+        boolean validation = false;
+
+            while (validation == false) {
+                
+                if (sc.hasNextInt()) {
+                    option = sc.nextInt();
+                    validation = true;
+                } else {
+                    System.out.println("» » » Por favor ingresa un número entero válido. « « «");
+                    sc.next(); // Descarta la entrada del scanner
+                    sc.nextLine();
+                    validation = false;
+                }//cierra if else
+
+            }//cierra while
+
+        return option;
+    }//cierra check
+
     //#//#//#//#//#//#//#//#//#//#//#// MENU 1 //#//#//#//#//#//#//#//#//#//#//#//
     
     public static int menu1(){
@@ -207,9 +230,7 @@ public class Principal {
                             "           '. <`'-,_)     » » »      PokeMondonGo      « « «      (_,-'`> .'\n" + //
                             "            '._)                                                       (_,'");
 
-
-            option = sc.nextInt();
-
+            check();
             return option;
     }//cierra menu1
    
