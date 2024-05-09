@@ -3,10 +3,12 @@ package simulador;
 import java.util.*;
 
 public class Principal {
+
+    static int option;
+    static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
-
+        
         interfazDeCarga();
         interfazPokeMondonGo();
         switchGeneral(menu1()); //TODO: Arreglar la generación de doble menu 1.
@@ -15,17 +17,17 @@ public class Principal {
 
     }//cierra main
 
-    // TIEMPO DE ESPERA //
+    //#//#//#//#//#//#//#//#//#//#//#// TIEMPO DE ESPERA //#//#//#//#//#//#//#//#//#//#//#//
 
     public static void wait(int sec){
         try {
-            Thread.sleep(sec * 500);
+            Thread.sleep(sec * 300);
          } catch (Exception e) {
             System.out.println(e);
          }
     }//cierra wait
     
-    // INTERFAZ DE CARGA //
+    //#//#//#//#//#//#//#//#//#//#//#// INTERFAZ DE CARGA //#//#//#//#//#//#//#//#//#//#//#//
     
     public static void interfazDeCarga(){
 
@@ -37,13 +39,13 @@ public class Principal {
         
     }//cierra interfaz de carga
 
-    // INTERFAZ POKEMONDONGO //
+    //#//#//#//#//#//#//#//#//#//#//#// INTERFAZ POKEMONDONGO //#//#//#//#//#//#//#//#//#//#//#//
 
     public static void interfazPokeMondonGo(){
 
         wait(3);
         
-        System.out.println(" » » » Bienvenidos a PokeMondonGo « « « ");
+        System.out.println(" » » » Bienvenido(a) a PokeMondonGo « « « ");
 
         System.out.println(" \n \n \n \n \n  "); //Espacio visual
 
@@ -188,7 +190,7 @@ public class Principal {
     // MENU 1 //
     
     public static int menu1(){
-        wait(1);
+        wait(2);
         
             System.out.println("[Nico] ,___          .-;'                                    `;-.          ___, [Bri]\n" + //
                             "       `\"-.`\\_...._/`.`   » » » Seleccione una opción: « « «   `.`\\_...._/`.-\"`\n" + //
@@ -201,17 +203,16 @@ public class Principal {
                             "      `>.|;, \\_)    \\_)                                        (_/    (_/ ,;|_.<`\n" + //
                             "       `-;     ,    /      (4) | Salir.                          \\    ,     ;-`\n" + //
                             "          \\    /   <                                              >   \\    /\n" + //
-                            "           '. <`'-,_)     » » »      PokéMondonGo      « « «      (_,-'`> .'\n" + //
+                            "           '. <`'-,_)     » » »      PokeMondonGo      « « «      (_,-'`> .'\n" + //
                             "            '._)                                                       (_,'");
 
-            Scanner sc = new Scanner(System.in); //TODO: Hacer el Scanner global, para no tener que volver a crearlo acá.
 
-            int option = sc.nextInt();
+            option = sc.nextInt();
 
             return option;
     }//cierra menu1
    
-    // SWITCH GENERAL //
+    //#//#//#//#//#//#//#//#//#//#//#// SWITCH GENERAL //#//#//#//#//#//#//#//#//#//#//#//
     
     public static void switchGeneral(int option){
 
@@ -248,7 +249,7 @@ public class Principal {
 
     }//cierra switchCase1
 
-    //SWITCH GENERAL CASE 1 //
+     //#//#//#//#//#//#//#//#//#//#//#// SWITCH GENERAL CASE 1 //#//#//#//#//#//#//#//#//#//#//#//
 
     public static int switchGenCase1(){
         System.out.println(" \n \n \n \n \n "); //Espacio visual
@@ -272,27 +273,25 @@ public class Principal {
                 "          \\    /   <                                              >   \\    /\n" + //
                 "           '. <`'-,_)     » » »      PokéMondonGo      « « «      (_,-'`> .'\n" + //
                 "            '._)                                                       (_,'");
-    
-        Scanner sc = new Scanner(System.in); //TODO: Hacer el Scanner global, para no tener que volver a crearlo acá.
                     
         int option = sc.nextInt();
 
         return option;
     }//cierra switchGenCase1
 
-    //SWITCH GENERAL CASE 2 //
+    //#//#//#//#//#//#//#//#//#//#//#// SWITCH GENERAL CASE 2 //#//#//#//#//#//#//#//#//#//#//#//
 
     public static void switchGenCase2(){
         System.out.println("¡Has seleccionado «Gestionar Pokémones»!");
     }//cierra switchGenCase2
 
-    //SWITCH GENERAL CASE 3 //
+    //#//#//#//#//#//#//#//#//#//#//#// SWITCH GENERAL CASE 3 //#//#//#//#//#//#//#//#//#//#//#//
 
     public static void switchGenCase3(){
         System.out.println("¡Has seleccionado «Iniciar Batalla»!");
     }//cierra switchGenCase3
 
-    //SWITCH GENERAL CASE 4 //
+    //#//#//#//#//#//#//#//#//#//#//#// SWITCH GENERAL CASE 4 //#//#//#//#//#//#//#//#//#//#//#//
 
     public static void switchGenCase4(){
         System.out.println(" \n \n \n \n \n \n "); //Espacio visual
