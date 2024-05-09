@@ -7,11 +7,12 @@ public class Principal {
     static int option;
     static Scanner sc = new Scanner(System.in);
 
+    //#//#//#//#//#//#//#//#//#//#//#// MAIN //#//#//#//#//#//#//#//#//#//#//#//
     public static void main(String[] args) {
         
         interfazDeCarga();
         interfazPokeMondonGo();
-        switchGeneral(menu1()); //TODO: Arreglar la generación de doble menu 1.
+        switchGeneral(option);
 
         sc.close(); //cierra Scanner
 
@@ -31,11 +32,11 @@ public class Principal {
     
     public static void interfazDeCarga(){
 
-    System.out.println(" \n \n \n \n \n  "); //Espacio visual
+    System.out.println(" \n \n \n \n \n "); //Espacio visual
 
     System.out.println("Cargando...");
 
-    System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+    System.out.println(" \n \n \n \n \n \n"); //Espacio visual
         
     }//cierra interfaz de carga
 
@@ -43,13 +44,13 @@ public class Principal {
 
     public static void interfazPokeMondonGo(){
 
-        wait(3);
+        wait(6);
         
         System.out.println(" » » » Bienvenido(a) a PokeMondonGo « « « ");
 
-        System.out.println(" \n \n \n \n \n  "); //Espacio visual
+        System.out.println(" \n \n \n \n \n \n"); //Espacio visual
 
-        wait(3);
+        wait(6);
 
         System.out.println(" \n \n \n \n "); //Espacio visual //P
 
@@ -187,17 +188,17 @@ public class Principal {
 
     }//cierra interfazPokeMondonGo
     
-    // MENU 1 //
+    //#//#//#//#//#//#//#//#//#//#//#// MENU 1 //#//#//#//#//#//#//#//#//#//#//#//
     
     public static int menu1(){
-        wait(2);
+        wait(3);
         
             System.out.println("[Nico] ,___          .-;'                                    `;-.          ___, [Bri]\n" + //
                             "       `\"-.`\\_...._/`.`   » » » Seleccione una opción: « « «   `.`\\_...._/`.-\"`\n" + //
                             "    ,      \\        /                                            \\        /      ,\n" + //
                             " .-' ',    / ()   ()\\      (1) | Gestionar Entrenadores.         /()   () \\    .' `-.\n" + //
-                            "`'._   \\  /()    .  (|                                          |)   .   ()\\   /   _.'`\n" + //
-                            "    > .' ;,     -'-  /     (2) | Gestionar Pokémones.            \\  -'-    ,; '.  <\n" + //
+                            "`'._   \\  /()   .   (|                                          |)   .   ()\\   /   _.'`\n" + //
+                            "    > .' ;,    -'-  /      (2) | Gestionar Pokémones.            \\  -'-    ,; '.  <\n" + //
                             "   / <   |;,     __.;                                            ;.__     ,;|   >  \\\n" + //
                             "   '-.'-.|  , \\    , \\     (3) | Iniciar Batalla.               / ,    / ,  |.-'.-'\n" + //
                             "      `>.|;, \\_)    \\_)                                        (_/    (_/ ,;|_.<`\n" + //
