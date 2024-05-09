@@ -213,7 +213,7 @@ public class Principal {
         return option;
     }//cierra check
 
-    //#//#//#//#//#//#//#//#//#//#//#// MENU 1 //#//#//#//#//#//#//#//#//#//#//#//
+    //#//#//#//#//#//#//#//#//#//#//#// [] MENU 1 [] //#//#//#//#//#//#//#//#//#//#//#//
     
     public static int menu1(){
         wait(3);
@@ -236,22 +236,22 @@ public class Principal {
             return option;
     }//cierra menu1
    
-    //#//#//#//#//#//#//#//#//#//#//#// [] SWITCH MENU 1 [] //#//#//#//#//#//#//#//#//#//#//#//
+    //#//#//#//#//#//#//#//#//#//#//#// {} SWITCH MENU 1 {} //#//#//#//#//#//#//#//#//#//#//#//
     
     public static void switchMenu1(int option){
 
         switch (option){
             case 1:
-                menu1Case1(); 
+                menuGestionarEntrenadores(); 
                 break;
             case 2:
-                menu1Case2();
+                menuGestionarPokemones();
                 break;
             case 3:
-                menu1Case3();
+                menuIniciarBatalla();
                 break;
             case 4:
-                menu1Case4();
+                menu1Salida();
                 break;
             default:
                 System.out.println(" \n \n \n \n \n \n "); //Espacio visual
@@ -272,9 +272,9 @@ public class Principal {
 
     }//cierra switchCase1
 
-     //#//#//#//#//#//#//#//#//#//#//#// [ MENU 1 CASE 1 ] //#//#//#//#//#//#//#//#//#//#//#//
+     //#//#//#//#//#//#//#//#//#//#//#// [] MENU GESTIONAR ENTRENADORES [] //#//#//#//#//#//#//#//#//#//#//#//
 
-    public static int menu1Case1(){
+    public static int menuGestionarEntrenadores(){
         System.out.println(" \n \n \n \n \n "); //Espacio visual
     
         System.out.println("¡Has seleccionado «Gestionar Entrenadores»!");
@@ -297,37 +297,70 @@ public class Principal {
                 "           '. <`'-,_)     » » »      PokéMondonGo      « « «      (_,-'`> .'\n" + //
                 "            '._)                                                       (_,'");
                     
-        int option = sc.nextInt();
-
+        check();
         return option;
-    }//cierra switchMenu1Case1
+    }//cierra menuGestionarEntrenadores
 
-    //#//#//#//#//#//#//#//#//#//#//#// - SELECCIONAR ENTRENADOR - //#//#//#//#//#//#//#//#//#//#//#//
+    //#//#//#//#//#//#//#//#//#//#//#// {} SWITCH GESTIONAR ENTRENADORES {} //#//#//#//#//#//#//#//#//#//#//#//
 
-    public static void seleccionarEntrenador(){
-        
-    }//cierra seleccionarEntrenador
+    public static void switchMenuGestionarEntrenadores(){
 
-    //#//#//#//#//#//#//#//#//#//#//#// [ MENU 1 CASE 2 ] //#//#//#//#//#//#//#//#//#//#//#//
+        switch (option){
+            case 1:
+                
+                break;
+            case 2:
 
-    public static void menu1Case2(){
+                break;
+            case 3:
+                
+                break;
+            case 4:
+                
+                break;
+            default:
+                System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+                
+                System.out.println("¡Debe seleccionar una opción válida!");
+
+                System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+
+                wait(2);
+
+                System.out.println("Reiniciando...");
+
+                System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+
+                interfazPokeMondonGo();
+                break;
+        }//cierra switch
+
+    }//cierra switchMenuGestionarEntrenadores
+
+    //#//#//#//#//#//#//#//#//#//#//#// [] MENU GESTIONAR POKEMONES [] //#//#//#//#//#//#//#//#//#//#//#//
+
+    public static void menuGestionarPokemones(){
         System.out.println("¡Has seleccionado «Gestionar Pokémones»!");
-    }//cierra switchGenCase2
+    }//cierra menuGestionarPokemones
 
-    //#//#//#//#//#//#//#//#//#//#//#// [ MENU 1 CASE 3 ] //#//#//#//#//#//#//#//#//#//#//#//
+    //#//#//#//#//#//#//#//#//#//#//#// {} SWITCH GESTIONAR POKEMONES {} //#//#//#//#//#//#//#//#//#//#//#//
+    
+    //#//#//#//#//#//#//#//#//#//#//#// [] MENU INICIAR BATALLA [] //#//#//#//#//#//#//#//#//#//#//#//
 
-    public static void menu1Case3(){
+    public static void menuIniciarBatalla(){
         System.out.println("¡Has seleccionado «Iniciar Batalla»!");
-    }//cierra switchGenCase3
+    }//cierra menuIniciarBatalla
 
-    //#//#//#//#//#//#//#//#//#//#//#// [ MENU 1 CASE 4 ] //#//#//#//#//#//#//#//#//#//#//#//
+    //#//#//#//#//#//#//#//#//#//#//#// {} SWITCH INICIAR BATALLA {} //#//#//#//#//#//#//#//#//#//#//#//
+    
+    //#//#//#//#//#//#//#//#//#//#//#// [] MENU 1 SALIDA [] //#//#//#//#//#//#//#//#//#//#//#//
 
-    public static void menu1Case4(){
+    public static void menu1Salida(){
         System.out.println(" \n \n \n \n \n \n "); //Espacio visual
                     System.out.println("» » » Saliendo de PokeMondonGo « « «");
                     System.out.println(" \n \n \n \n \n \n "); //Espacio visual
     
                     // Sería cool añadir un Snorlax aquí de despedida.
-    }//cierra switchGenCase4
+    }//cierra menu1Salida
    
 }//cierra class
