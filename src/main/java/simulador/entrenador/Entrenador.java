@@ -9,9 +9,12 @@ public class Entrenador {
     private LinkedList <Pokemon> pokemones = new LinkedList<>();
 
     Scanner sc = new Scanner(System.in);
+    
+    // Constructor //
 
-    public Entrenador(String nombre) {
+    public Entrenador(String nombre, LinkedList<Pokemon> pokemones) {
         this.nombre = nombre;
+        this.pokemones = pokemones;
     }//cierra constructor
 
 
@@ -27,11 +30,11 @@ public class Entrenador {
 
     public LinkedList<Pokemon> getPokemones(){
         return this.pokemones;
-    }//cierra getPokemones ✅
+    }//cierra getPokemones
     
     public void setPokemones(){
-        this.pokemones = pokemones;
-    }//cierra getPokemones 👀
+        this.pokemones = pokemones; //TODO:¿Por qué amarillo?
+    }//cierra getPokemones
 
 
     //Metodos//
