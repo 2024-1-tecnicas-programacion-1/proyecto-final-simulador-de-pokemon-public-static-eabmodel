@@ -2,6 +2,8 @@ package simulador;
 
 import java.util.*;
 
+import simulador.entrenador.Entrenador;
+
 public class Principal {
 
     //#//#//#//#//#//#//#//#//#//#//#// GLOBALES //#//#//#//#//#//#//#//#//#//#//#//
@@ -34,11 +36,9 @@ public class Principal {
     
     public static void interfazDeCarga(){
 
-    System.out.println(" \n \n \n \n \n "); //Espacio visual
-
-    System.out.println("Cargando...");
-
-    System.out.println(" \n \n \n \n \n \n"); //Espacio visual
+        System.out.println(" \n \n \n \n \n "); //Espacio visual
+        System.out.println("Cargando...");
+        System.out.println(" \n \n \n \n \n \n"); //Espacio visual
         
     }//cierra interfaz de carga
 
@@ -49,13 +49,11 @@ public class Principal {
         wait(6);
         
         System.out.println("» » » Bienvenido(a) a PokeMondonGo « « «");
-
         System.out.println(" \n \n \n \n \n \n"); //Espacio visual
 
         wait(6);
 
         System.out.println(" \n \n \n \n "); //Espacio visual //P
-
         System.out.println("   ___      \n" + //
                             "  / _ \\\n" + //
                             " / /_)/\n" + //
@@ -64,9 +62,7 @@ public class Principal {
                             "                                                                     ");
 
         System.out.println(" \n \n \n \n "); //Espacio visual //PO
-        
         wait(1);
-
         System.out.println("   ___      \n" + //
                         "  / _ \\___ \n" + //
                             " / /_)/ _ \\\n" + //
@@ -75,9 +71,7 @@ public class Principal {
                         "                                                                     ");
 
         System.out.println(" \n \n \n \n "); //Espacio visual //POK
-
         wait(1);
-
         System.out.println("   ___      _\n" + //
                             "  / _ \\___ | | __\n" + //
                             " / /_)/ _ \\| |/ /\n" + //
@@ -86,9 +80,7 @@ public class Principal {
                             "                                                                     ");
 
         System.out.println(" \n \n \n \n "); //Espacio visual //POKE
-
         wait(1);
-
         System.out.println("   ___      _\n" + //
                         "  / _ \\___ | | _____  \n" + //
                         " / /_)/ _ \\| |/ / _ \\\n" + //
@@ -97,9 +89,7 @@ public class Principal {
                         "                                                                     ");
 
         System.out.println(" \n \n \n \n "); //Espacio visual //POKEM
-
         wait(1);
-
         System.out.println("   ___      _\n" + //
                         "  / _ \\___ | | _____  /\\/\\\n" + //
                         " / /_)/ _ \\| |/ / _ \\/    \\\n" + //
@@ -108,9 +98,7 @@ public class Principal {
                         "                                                                     ");
 
         System.out.println(" \n \n \n \n "); //Espacio visual //POKEMO
-
         wait(1);
-
         System.out.println("   ___      _\n" + //
                         "  / _ \\___ | | _____  /\\/\\   ___\n" + //
                         " / /_)/ _ \\| |/ / _ \\/    \\ / _ \\\n" + //
@@ -119,9 +107,7 @@ public class Principal {
                         "                                                                     ");
 
         System.out.println(" \n \n \n \n "); //Espacio visual //POKEMON
-
         wait(1);
-
         System.out.println("   ___      _\n" + //
                         "  / _ \\___ | | _____  /\\/\\   ___  _ __\n" + //
                         " / /_)/ _ \\| |/ / _ \\/    \\ / _ \\| '_ \\\n" + //
@@ -130,9 +116,7 @@ public class Principal {
                         "                                                                     ");
 
         System.out.println(" \n \n \n \n "); //Espacio visual //POKEMOND
-
         wait(1);
-
         System.out.println("   ___      _                               _\n" + //
                         "  / _ \\___ | | _____  /\\/\\   ___  _ __   __| |\n" + //
                         " / /_)/ _ \\| |/ / _ \\/    \\ / _ \\| '_ \\ / _` |\n" + //
@@ -141,9 +125,7 @@ public class Principal {
                         "                                                                     ");
 
         System.out.println(" \n \n \n \n "); //Espacio visual //POKEMONDO
-
         wait(1);
-
         System.out.println("   ___      _                               _\n" + //
                         "  / _ \\___ | | _____  /\\/\\   ___  _ __   __| | ___\n" + //
                         " / /_)/ _ \\| |/ / _ \\/    \\ / _ \\| '_ \\ / _` |/ _ \\\n" + //
@@ -152,9 +134,7 @@ public class Principal {
                         "                                                                     ");
 
         System.out.println(" \n \n \n \n "); //Espacio visual //POKEMONDON
-
         wait(1);
-
         System.out.println("   ___      _                               _               \n" + //
                         "  / _ \\___ | | _____  /\\/\\   ___  _ __   __| | ___  _ __\n" + //
                         " / /_)/ _ \\| |/ / _ \\/    \\ / _ \\| '_ \\ / _` |/ _ \\| '_ \\\n" + //
@@ -163,9 +143,7 @@ public class Principal {
                         "                                                                     ");
 
         System.out.println(" \n \n \n \n "); //Espacio visual //POKEMONDONG
-
         wait(1);
-
         System.out.println("   ___      _                               _               ___\n" + //
                         "  / _ \\___ | | _____  /\\/\\   ___  _ __   __| | ___  _ __   / _ \\\n" + //
                     " / /_)/ _ \\| |/ / _ \\/    \\ / _ \\| '_ \\ / _` |/ _ \\| '_ \\ / /_\\\n" + //
@@ -174,9 +152,8 @@ public class Principal {
                         "                                                                     ");
 
         System.out.println(" \n \n \n \n "); //Espacio visual //POKEMONDONGO
-
         wait(1);
-        
+    
         System.out.println("   ___      _                               _               ___      \n" + //
                         "  / _ \\___ | | _____  /\\/\\   ___  _ __   __| | ___  _ __   / _ \\___  \n" + //
                     " / /_)/ _ \\| |/ / _ \\/    \\ / _ \\| '_ \\ / _` |/ _ \\| '_ \\ / /_\\/ _ \\ \n" + //
@@ -184,7 +161,7 @@ public class Principal {
                     "\\/    \\___/|_|\\_\\___\\/    \\/\\___/|_| |_|\\__,_|\\___/|_| |_\\____/\\___/ \n" + //
                         "                                                                     ");
 
-        System.out.println(" \n \n \n \n "); //Espacio visual //POKEMONDONGO FINAL
+        System.out.println(" \n \n \n \n "); //Espacio visual
 
         menu1();
 
@@ -194,11 +171,13 @@ public class Principal {
     
     public static int check(){
 
-        boolean validation = false;
+        option = 0; //Reset de option.
 
-            while (validation == false) {
+        boolean validation = false; //Reset de validation.
+
+            while (validation == false) { 
                 
-                if (sc.hasNextInt()) {
+                if (sc.hasNextInt()) { //Verificar que sea un entero.
                     option = sc.nextInt();
                     validation = true;
                 } else {
@@ -217,23 +196,22 @@ public class Principal {
     
     public static int menu1(){
         wait(3);
-        
-            System.out.println("[Nico] ,___          .-;'                                    `;-.          ___, [Bri]\n" + //
-                            "       `\"-.`\\_...._/`.`   » » » Seleccione una opción: « « «   `.`\\_...._/`.-\"`\n" + //
-                            "    ,      \\        /                                            \\        /      ,\n" + //
-                            " .-' ',    / ()   ()\\      (1) | Gestionar Entrenadores.         /()   () \\    .' `-.\n" + //
-                            "`'._   \\  /()   .   (|                                          |)   .   ()\\   /   _.'`\n" + //
-                            "    > .' ;,    -'-  /      (2) | Gestionar Pokémones.            \\  -'-    ,; '.  <\n" + //
-                            "   / <   |;,     __.;                                            ;.__     ,;|   >  \\\n" + //
-                            "   '-.'-.|  , \\    , \\     (3) | Iniciar Batalla.               / ,    / ,  |.-'.-'\n" + //
-                            "      `>.|;, \\_)    \\_)                                        (_/    (_/ ,;|_.<`\n" + //
-                            "       `-;     ,    /      (4) | Salir.                          \\    ,     ;-`\n" + //
-                            "          \\    /   <                                              >   \\    /\n" + //
-                            "           '. <`'-,_)     » » »      PokeMondonGo      « « «      (_,-'`> .'\n" + //
-                            "            '._)                                                       (_,'");
+            //TODO: Quitar Nico y Bri de todos los menus.
+        System.out.println("[Nico] ,___          .-;'                                    `;-.          ___, [Bri]\n" + //
+                        "       `\"-.`\\_...._/`.`   » » » Seleccione una opción: « « «   `.`\\_...._/`.-\"`\n" + //
+                        "    ,      \\        /                                            \\        /      ,\n" + //
+                        " .-' ',    / ()   ()\\      (1) | Gestionar Entrenadores.         /()   () \\    .' `-.\n" + //
+                        "`'._   \\  /()   .   (|                                          |)   .   ()\\   /   _.'`\n" + //
+                        "    > .' ;,    -'-  /      (2) | Gestionar Pokémones.            \\  -'-    ,; '.  <\n" + //
+                        "   / <   |;,     __.;                                            ;.__     ,;|   >  \\\n" + //
+                        "   '-.'-.|  , \\    , \\     (3) | Iniciar Batalla.               / ,    / ,  |.-'.-'\n" + //
+                        "      `>.|;, \\_)    \\_)                                        (_/    (_/ ,;|_.<`\n" + //
+                        "       `-;     ,    /      (4) | Salir.                          \\    ,     ;-`\n" + //
+                        "          \\    /   <                                              >   \\    /\n" + //
+                        "           '. <`'-,_)     » » »      PokeMondonGo      « « «      (_,-'`> .'\n" + //
+                        "            '._)                                                       (_,'");
 
-            check();
-            return option;
+        return check();
     }//cierra menu1
    
     //#//#//#//#//#//#//#//#//#//#//#// {} SWITCH MENU 1 {} //#//#//#//#//#//#//#//#//#//#//#//
@@ -255,33 +233,28 @@ public class Principal {
                 break;
             default:
                 System.out.println(" \n \n \n \n \n \n "); //Espacio visual
-                
                 System.out.println("¡Debe seleccionar una opción válida!");
-
                 System.out.println(" \n \n \n \n \n \n "); //Espacio visual
 
                 wait(2);
 
                 System.out.println("Reiniciando...");
-
                 System.out.println(" \n \n \n \n \n \n "); //Espacio visual
 
                 interfazPokeMondonGo();
                 break;
         }//cierra switch
 
-    }//cierra switchCase1
+    }//cierra switchMenu1
 
      //#//#//#//#//#//#//#//#//#//#//#// [] MENU GESTIONAR ENTRENADORES [] //#//#//#//#//#//#//#//#//#//#//#//
 
-    public static int menuGestionarEntrenadores(){
-        System.out.println(" \n \n \n \n \n "); //Espacio visual
-    
+    public static void menuGestionarEntrenadores(){
+        System.out.println(" \n \n \n \n \n \n"); //Espacio visual
         System.out.println("¡Has seleccionado «Gestionar Entrenadores»!");
-                    
         System.out.println(" \n \n \n \n \n "); //Espacio visual
     
-        wait(3);
+        wait(5);
     
         System.out.println("[Nico] ,___          .-;'                                    `;-.          ___, [Bri]\n" + //
                 "       `\"-.`\\_...._/`.`   » » » Seleccione una opción: « « «   `.`\\_...._/`.-\"`\n" + //
@@ -297,18 +270,37 @@ public class Principal {
                 "           '. <`'-,_)     » » »      PokéMondonGo      « « «      (_,-'`> .'\n" + //
                 "            '._)                                                       (_,'");
                     
-        check();
-        return option;
+        switchMenuGestionarEntrenadores(check());
     }//cierra menuGestionarEntrenadores
 
     //#//#//#//#//#//#//#//#//#//#//#// {} SWITCH GESTIONAR ENTRENADORES {} //#//#//#//#//#//#//#//#//#//#//#//
 
-    public static void switchMenuGestionarEntrenadores(){
+    public static void switchMenuGestionarEntrenadores(int option){
 
         switch (option){
             case 1:
                 
+                System.out.println(" \n \n \n \n \n \n"); //Espacio visual
+                System.out.println("¡Has seleccionado «Registrar nuevo entrenador»!");     
+                System.out.println(" \n \n \n \n \n "); //Espacio visual
+            
+                wait(5);
+
+                interfazDeCarga();
+
+                wait(4);
+                
+                System.out.println("¡Ingrese el nombre del nuevo entrenador!");
+
+                System.out.println(" \n \n \n \n \n "); //Espacio visual
+
+                sc.nextLine(); //reset del Scanner si no Falla xd
+                String nombre = sc.nextLine();
+
+                nuevoEntrenador(nombre);
+
                 break;
+
             case 2:
 
                 break;
@@ -341,18 +333,86 @@ public class Principal {
 
     public static void menuGestionarPokemones(){
         System.out.println("¡Has seleccionado «Gestionar Pokémones»!");
+
+        switchMenuGestionarPokemones(check());
     }//cierra menuGestionarPokemones
 
     //#//#//#//#//#//#//#//#//#//#//#// {} SWITCH GESTIONAR POKEMONES {} //#//#//#//#//#//#//#//#//#//#//#//
+
+    public static void switchMenuGestionarPokemones(int option){
+        switch (option){
+            case 1:
+                
+                break;
+            case 2:
+
+                break;
+            case 3:
+                
+                break;
+            case 4:
+                
+                break;
+            default:
+                System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+                
+                System.out.println("¡Debe seleccionar una opción válida!");
+
+                System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+
+                wait(2);
+
+                System.out.println("Reiniciando...");
+
+                System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+
+                interfazPokeMondonGo();
+                break;
+        }//cierra switch
+    }//cierra switchMenuGestionarPokemones
     
     //#//#//#//#//#//#//#//#//#//#//#// [] MENU INICIAR BATALLA [] //#//#//#//#//#//#//#//#//#//#//#//
 
     public static void menuIniciarBatalla(){
         System.out.println("¡Has seleccionado «Iniciar Batalla»!");
+
+        switchIniciarBatalla(check());
     }//cierra menuIniciarBatalla
 
     //#//#//#//#//#//#//#//#//#//#//#// {} SWITCH INICIAR BATALLA {} //#//#//#//#//#//#//#//#//#//#//#//
     
+    public static void switchIniciarBatalla(int option){
+        switch (option){
+            case 1:
+                
+                break;
+            case 2:
+
+                break;
+            case 3:
+                
+                break;
+            case 4:
+                
+                break;
+            default:
+                System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+                
+                System.out.println("¡Debe seleccionar una opción válida!");
+
+                System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+
+                wait(2);
+
+                System.out.println("Reiniciando...");
+
+                System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+
+                interfazPokeMondonGo();
+                break;
+        }//cierra switch
+    }//cierra switchIniciarBatalla
+
     //#//#//#//#//#//#//#//#//#//#//#// [] MENU 1 SALIDA [] //#//#//#//#//#//#//#//#//#//#//#//
 
     public static void menu1Salida(){
@@ -363,4 +423,13 @@ public class Principal {
                     // Sería cool añadir un Snorlax aquí de despedida.
     }//cierra menu1Salida
    
+    //#//#//#//#//#//#//#//#//#//#//#// NUEVO ENTRENADOR //#//#//#//#//#//#//#//#//#//#//#//
+
+    public static void nuevoEntrenador(String nombre){
+        
+        Entrenador entrenador = new Entrenador(nombre, null);
+
+        entrenador.setNombre(nombre);
+
+    }//cierra nuevoEntrenador
 }//cierra class
