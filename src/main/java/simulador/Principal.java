@@ -10,6 +10,7 @@ public class Principal {
 
     static int option;
     static Scanner sc = new Scanner(System.in);
+    static boolean firstMenuGestionarEntrenadores = true;
 
     //#//#//#//#//#//#//#//#//#//#//#// MAIN //#//#//#//#//#//#//#//#//#//#//#//
     public static void main(String[] args) {
@@ -175,8 +176,10 @@ public class Principal {
 
         boolean validation = false; //Reset de validation.
 
-            while (validation == false) { 
+            while (validation == false) {
                 
+                sc.nextLine();//Reset Scanner //TODO: Preguntarle al profe como solucionar esto.
+
                 if (sc.hasNextInt()) { //Verificar que sea un entero.
                     option = sc.nextInt();
                     validation = true;
@@ -250,9 +253,14 @@ public class Principal {
      //#//#//#//#//#//#//#//#//#//#//#// [] MENU GESTIONAR ENTRENADORES [] //#//#//#//#//#//#//#//#//#//#//#//
 
     public static void menuGestionarEntrenadores(){
-        System.out.println(" \n \n \n \n \n \n"); //Espacio visual
-        System.out.println("¡Has seleccionado «Gestionar Entrenadores»!");
-        System.out.println(" \n \n \n \n \n "); //Espacio visual
+
+        while (firstMenuGestionarEntrenadores == true){
+            System.out.println(" \n \n \n \n \n \n"); //Espacio visual
+            System.out.println("¡Has seleccionado «Gestionar Entrenadores»!");
+            System.out.println(" \n \n \n \n \n \n"); //Espacio visual
+            firstMenuGestionarEntrenadores = false;
+        }//cierra while
+        
     
         wait(5);
     
@@ -267,7 +275,7 @@ public class Principal {
                 "      `>.|;, \\_)    \\_)                                        (_/    (_/ ,;|_.<`\n" + //
                 "       `-;     ,    /      (4) | Volver al menú principal.       \\    ,     ;-`\n" + //
                 "          \\    /   <                                              >   \\    /\n" + //
-                "           '. <`'-,_)     » » »      PokéMondonGo      « « «      (_,-'`> .'\n" + //
+                "           '. <`'-,_)      (5) | Salir.                          (_,-'`> .'\n" + //
                 "            '._)                                                       (_,'");
                     
         switchMenuGestionarEntrenadores(check());
@@ -282,7 +290,7 @@ public class Principal {
                 
                 System.out.println(" \n \n \n \n \n \n"); //Espacio visual
                 System.out.println("¡Has seleccionado «Registrar nuevo entrenador»!");     
-                System.out.println(" \n \n \n \n \n "); //Espacio visual
+                System.out.println(" \n \n \n \n \n \n"); //Espacio visual
             
                 wait(5);
 
@@ -291,13 +299,35 @@ public class Principal {
                 wait(4);
                 
                 System.out.println("¡Ingrese el nombre del nuevo entrenador!");
+                System.out.println(" \n \n \n \n \n \n"); //Espacio visual
 
-                System.out.println(" \n \n \n \n \n "); //Espacio visual
-
-                sc.nextLine(); //reset del Scanner si no Falla xd
+                sc.nextLine(); //reset del Scanner si no falla xd
                 String nombre = sc.nextLine();
 
                 nuevoEntrenador(nombre);
+
+                System.out.println(" \n \n \n \n \n \n"); //Espacio visual
+                System.out.println("Creando nuevo entrenador...");
+                System.out.println(" \n \n \n \n \n \n"); //Espacio visual
+
+                wait(5);
+
+                System.out.println("Registrando en la Liga Pókemon...");
+                System.out.println(" \n \n \n \n \n \n"); //Espacio visual
+
+                wait(5);
+
+                System.out.println(" ☆ ☆ ☆ ¡Entrenador registrado con éxito! ☆ ☆ ☆ ");
+                System.out.println(" \n \n \n \n \n \n"); //Espacio visual
+
+                wait(5);
+
+                System.out.println("Regresando al menú anterior...");
+                System.out.println(" \n \n \n \n \n \n"); //Espacio visual
+
+                wait(4);
+
+                menuGestionarEntrenadores();
 
                 break;
 
@@ -309,6 +339,9 @@ public class Principal {
                 break;
             case 4:
                 
+                break;
+            case 5:
+
                 break;
             default:
                 System.out.println(" \n \n \n \n \n \n "); //Espacio visual
