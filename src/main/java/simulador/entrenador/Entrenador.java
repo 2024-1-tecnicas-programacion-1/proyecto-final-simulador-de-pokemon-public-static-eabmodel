@@ -41,7 +41,7 @@ public class Entrenador {
     
     public void agregarPokemon(Pokemon pokemon){
         pokemones.add(pokemon);
-    }//cierra agregarPokemon 👀
+    }//cierra agregarPokemon //TODO: Ni idea de como agregarlos 👀
 
     public void entrenarPokemon(Pokemon pokemon){
         mostrarPokemon();
@@ -49,7 +49,7 @@ public class Entrenador {
         String palabraDeBusqueda = sc.nextLine();        
         //TipoPokemon.entrenar(buscarPokemon(palabraDeBusqueda));
         
-    }//cierra entrenarPokemon  //esperar explicacion del profe 👀
+    }//cierra entrenarPokemon  TODO: esperar explicacion del profe 👀
 
     public void mostrarPokemon(){
         for (Pokemon pokemon : pokemones) {
