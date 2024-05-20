@@ -55,13 +55,18 @@ public abstract class Pokemon {
         this.estado = estado;
     }//cierra setEstado
 
-    public abstract int atacar();
-    //Revisar tipo de dato //"pokemonOponente" //Esperar indicacion del profe
-
+    public void atacar(Pokemon oponente) { 
+     int danio = (int)(this.puntosDeAtaque * TipoPokemon.obtenerMultiplicador(this.tipo, oponente.tipo));
+     oponente.recibirDaño(danio);
+    }  
     public abstract int recibirDaño();
+     this.salud -= danio;
     //Revisar tipo de dato //"int daño" //Esperar indicacion del profe
 
-    public abstract String entrenar(Pokemon pokemon);
+    public void entrenar() {
+        this.puntosDeAtaque += 5;
+        this.salud += 10;
+    }
     //Revisar tipo de dato //"daño" //Esperar indicacion del profe
 
 }//cierra class
