@@ -9,6 +9,7 @@ public class Principal {
     // > > > > > > > > > > > > > > > > > > > G L O B A L E S < < < < < < < < < < < < < < < < < < < //
 
     static int option;
+    static String busqueda;
     static Scanner sc = new Scanner(System.in);
     static boolean firstMenuGestionarEntrenadores = true;
     static boolean firstSubMenuSeleccionarEntrenadores = true;
@@ -41,10 +42,11 @@ public class Principal {
 
     // [] [] [] [] [] [] [] [] [] [] [] [] MENU 1 [] [] [] [] [] [] [] [] [] [] [] [] //
     
-    public static int menu1(){
+    public static int menu1(){ //✅
+        
         wait(3);
-            //TODO: Quitar Nico y Bri de todos los menus.
-        System.out.println("[Nico] ,___          .-;'                                    `;-.          ___, [Bri]\n" + //
+        
+        System.out.println("       ,___          .-;'                                    `;-.          ___,\n" + //
                         "       `\"-.`\\_...._/`.`   » » » Seleccione una opción: « « «   `.`\\_...._/`.-\"`\n" + //
                         "    ,      \\        /                                            \\        /      ,\n" + //
                         " .-' ',    / ()   ()\\      (1) | Gestionar Entrenadores.         /()   () \\    .' `-.\n" + //
@@ -63,7 +65,7 @@ public class Principal {
    
     // {} {} {} {} {} {} {} {} {} {} {} {} SWITCH MENU 1 {} {} {} {} {} {} {} {} {} {} {} {} //
     
-    public static void switchMenu1(int option){
+    public static void switchMenu1(int option){ //✅
 
         switch (option){
             case 1:
@@ -76,7 +78,7 @@ public class Principal {
                 menuIniciarBatalla();
                 break;
             case 4:
-                menu1Salida();
+                salir();
                 break;
             default:
                 System.out.println(" \n \n \n \n \n \n "); //Espacio visual
@@ -96,7 +98,7 @@ public class Principal {
 
      // [] [] [] [] [] [] [] [] [] MENU GESTIONAR ENTRENADORES [] [] [] [] [] [] [] [] [] //
 
-    public static void menuGestionarEntrenadores(){
+    public static void menuGestionarEntrenadores(){ //✅
 
         while (firstMenuGestionarEntrenadores == true){
             System.out.println(" \n \n \n \n \n \n"); //Espacio visual
@@ -108,7 +110,7 @@ public class Principal {
     
         wait(5);
     
-        System.out.println("[Nico] ,___          .-;'                                    `;-.          ___, [Bri]\n" + //
+        System.out.println("       ,___          .-;'                                    `;-.          ___,\n" + //
                 "       `\"-.`\\_...._/`.`   » » » Seleccione una opción: « « «   `.`\\_...._/`.-\"`\n" + //
                 "    ,      \\        /                                            \\        /      ,\n" + //
                 " .-' ',    / ()   ()\\      (1) | Registrar nuevo entrenador.     /()   () \\    .' `-.\n" + //
@@ -127,10 +129,10 @@ public class Principal {
 
     // {} {} {} {} {} {} {} {} {} SWITCH GESTIONAR ENTRENADORES {} {} {} {} {} {} {} {} {} //
 
-    public static void switchMenuGestionarEntrenadores(int option){
+    public static void switchMenuGestionarEntrenadores(int option){ //🅿️
 
         switch (option){
-            case 1:
+            case 1: //🅿️
                 
                 System.out.println(" \n \n \n \n \n \n"); //Espacio visual
                 System.out.println("¡Has seleccionado «Registrar nuevo entrenador»!");     
@@ -145,10 +147,10 @@ public class Principal {
                 System.out.println("¡Ingrese el nombre del nuevo entrenador!");
                 System.out.println(" \n \n \n \n \n \n"); //Espacio visual
 
-                sc.nextLine(); //reset del Scanner si no falla xd
+                sc.nextLine(); //TODO: @Brian preguntarle al profe sobre este reset del Scanner.
                 String nombre = sc.nextLine();
 
-                nuevoEntrenador(nombre);
+                //TODO: @Mario aquí entra el nombre del entrenador, aquí se crea la lista de entrenadores?
 
                 System.out.println(" \n \n \n \n \n \n"); //Espacio visual
                 System.out.println("Creando nuevo entrenador...");
@@ -175,17 +177,38 @@ public class Principal {
 
                 break;
 
-            case 2:
+            case 2: //🅿️
 
-                //TODO: Mostrar lista de entrenadores y retornar al menu anterior.
+                System.out.println(" \n \n \n \n \n \n"); //Espacio visual
+                System.out.println("¡Has seleccionado «Ver lista de entrenadores»!");     
+                System.out.println(" \n \n \n \n \n \n"); //Espacio visual
+            
+                wait(5);
+
+                interfazDeCarga();
+
+                wait(4);
+
+                //TODO: @Mario aquí va el método de la lista de entrenadores.
+
+                System.out.println("Digite (1) para regresar al menú anterior.");
+                System.out.println("Digite (2) para salir de PokeMondonGo.");
+
+                check(); //TODO: @Brian revisar si es necesario este cuando Mario ponga la linea 191.
+
+                if (check() == 1) {
+                    menuGestionarEntrenadores();
+                } else if (check() == 2){
+                    salir();
+                }//cierra if
+
                 break;
-            case 3:
+            case 3: //✅
 
-                subMenuSeleccionarEntrenadores(); //TODO: La lista de entrenadores debe ir dentro de este método.
+                subMenuSeleccionarEntrenadores();
 
-                //TODO: Mostrar lista de entrenadores crear otro submenú.
                 break;
-            case 4:
+            case 4: //✅
                 System.out.println(" \n \n \n \n \n \n"); //Espacio visual
                 System.out.println("Regresando al menú principal...");     
                 System.out.println(" \n \n \n \n \n \n"); //Espacio visual
@@ -194,7 +217,7 @@ public class Principal {
 
                 switchMenu1(menu1());
                 break;
-            case 5:
+            case 5: //✅
 
                 System.out.println(" \n \n \n \n \n \n"); //Espacio visual
                 System.out.println("Guardando estadísticas...");     
@@ -206,9 +229,9 @@ public class Principal {
                 System.out.println("Guardando pokemones...");     
                 System.out.println(" \n \n \n \n \n \n"); //Espacio visual
 
-                //TODO: snorlax y kill programa .
+                salir();
                 break;
-            default:
+            default: //✅
                 System.out.println(" \n \n \n \n \n \n "); //Espacio visual
                 System.out.println("¡Debe seleccionar una opción válida!");
                 System.out.println(" \n \n \n \n \n \n "); //Espacio visual
@@ -226,7 +249,7 @@ public class Principal {
 
     // [] [] [] [] [] [] [] [] [] SUBMENU SELECCIONAR ENTRENADORES [] [] [] [] [] [] [] [] [] //
     
-    public static void subMenuSeleccionarEntrenadores(){
+    public static void subMenuSeleccionarEntrenadores(){ //🅿️
         while (firstSubMenuSeleccionarEntrenadores == true){
             System.out.println(" \n \n \n \n \n \n"); //Espacio visual
             System.out.println("¡Has seleccionado «Seleccionar Entrenadores»!");     
@@ -236,45 +259,48 @@ public class Principal {
             
         wait(5);
 
-        //TODO: Aquí va la lista de entrenadores.
-
         interfazDeCarga();
 
-        //TODO: PIKACHUS.
+        wait(4);
 
-        switchMenuGestionarPokemones(check());
+        System.out.println(" \n \n \n \n \n \n"); //Espacio visual
+        System.out.println("Ingrese el nombre del entrenador que desea usar a continuación:");
+        System.out.println(" \n \n \n \n \n \n"); //Espacio visual
+
+        wait(4);
+        
+        //TODO: @Brian Aquí va la lista de entrenadores de la linea 191.
+
+        busquedaEntrenador(busquedaLimpia());
+
     }//cierra subMenuSeleccionarEntrenadores
 
-    // {} {} {} {} {} {} {} {} {} SWITCH SELECCIONAR ENTRENADORES {} {} {} {} {} {} {} {} {} //
+    // [] [] [] [] [] [] [] [] [] SUBMENU NOMBRE ENTRENADOR [] [] [] [] [] [] [] [] [] //
 
-    public static void switchSubMenuSeleccionarEntrenadores(int option){
-        switch (option){
-            case 1:
-                
-                break;
-            case 2:
+    public static void subMenuNombreEntrenador(){ //🅿️
 
-                break;
-            case 3:
-                
-                break;
-            case 4:
-                
-                break;
-            default:
-                System.out.println(" \n \n \n \n \n \n "); //Espacio visual
-                System.out.println("¡Debe seleccionar una opción válida!");
-                System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+        System.out.println("       ,___          .-;'                                    `;-.          ___,\n" + //
+                "       `\"-.`\\_...._/`.`   » » » Seleccione una opción: « « «   `.`\\_...._/`.-\"`\n" + //
+                "    ,      \\        /                                            \\        /      ,\n" + //
+                " .-' ',    / ()   ()\\      (1) | Ver equipo de pokemones.        /()   () \\    .' `-.\n" + //
+                "`'._   \\  /()    .  (|                                          |)   .   ()\\   /   _.'`\n" + //
+                "    > .' ;,     -'-  /     (2) | Agregar pokémon al equipo.      \\  -'-    ,; '.  <\n" + //
+                "   / <   |;,     __.;                                            ;.__     ,;|   >  \\\n" + //
+                "   '-.'-.|  , \\    , \\     (3) | Entrenar pokémon.              / ,    / ,  |.-'.-'\n" + //
+                "      `>.|;, \\_)    \\_)                                        (_/    (_/ ,;|_.<`\n" + //
+                "       `-;     ,    /      (4) | Volver al menu anterior.        \\    ,     ;-`\n" + //
+                "          \\    /   <                                              >   \\    /\n" + //
+                "           '. <`'-,_)      (5) | Salir.                          (_,-'`> .'\n" + //
+                "            '._)                                                       (_,'");
+    
+        switchNombreEntrenador(check());
+    }//cierra subMenuNombreEntrenador
 
-                wait(2);
+    // {} {} {} {} {} {} {} {} {} SWITCH NOMBRE ENTRENADOR {} {} {} {} {} {} {} {} {} //
 
-                System.out.println("Reiniciando...");
-                System.out.println(" \n \n \n \n \n \n "); //Espacio visual
-
-                subMenuSeleccionarEntrenadores();
-                break;
-        }//cierra switch
-    }//cierra switchSubMenuSeleccionarEntrenadores
+    public static void switchNombreEntrenador(int option){ //🅿️
+        
+    }//cierra nombreEntrenador
 
     // [] [] [] [] [] [] [] [] [] MENU GESTIONAR POKEMONES [] [] [] [] [] [] [] [] [] //
 
@@ -372,15 +398,17 @@ public class Principal {
         }//cierra switch
     }//cierra switchIniciarBatalla
 
-    // [] [] [] [] [] [] [] [] [] MENU 1 SALIDA [] [] [] [] [] [] [] [] []//
+    // [] [] [] [] [] [] [] [] [] SALIR [] [] [] [] [] [] [] [] []//
 
-    public static void menu1Salida(){
+    public static void salir(){
         System.out.println(" \n \n \n \n \n \n "); //Espacio visual
         System.out.println("» » » Saliendo de PokeMondonGo « « «");
         System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+
+        //TODO: @Brian añadir kill program.
     
         //TODO: Sería cool añadir un Snorlax aquí de despedida.
-    }//cierra menu1Salida
+    }//cierra salir
    
 
 
@@ -577,4 +605,43 @@ public class Principal {
 
     }//cierra nuevoEntrenador
 
+    // () () () () () () () () () BUSQUEDA ENTRENADOR () () () () () () () () () //
+
+    public static void busquedaEntrenador(String busqueda){
+        
+        for (Entrenador entrenador : listaDeEntrenadores) {
+            //TODO:@Brian poner el nombre de la lista de entrenadores
+            if (entrenador.getNombre().equals(busqueda)) {
+
+                subMenuNombreEntrenador();
+
+            } else {
+
+                System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+                System.out.println("¡Debe seleccionar una opción válida!");
+                System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+
+                wait(2);    
+
+                System.out.println("Reiniciando...");
+                System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+                
+                subMenuSeleccionarEntrenadores();
+
+                break;
+            }//cierra if
+        }//cierra foreach
+    }//cierra busquedaEntrenador
+
+    // () () () () () () () () () BUSQUEDA LIMPIA () () () () () () () () () //
+
+    public static String busquedaLimpia(){
+        
+        busqueda = sc.nextLine();
+
+        busqueda.toLowerCase();//pEdRo => pedro
+        busqueda.toUpperCase().charAt(0); //pedro => Pedro
+
+        return busqueda;
+    }//cierra busquedaLimpia
 }//cierra class
