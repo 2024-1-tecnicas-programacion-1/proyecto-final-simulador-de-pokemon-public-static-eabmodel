@@ -1,6 +1,6 @@
 package simulador.pokemon;
 
-enum TipoPokemon {
+public enum TipoPokemon {
     NORMAL, FUEGO, AGUA, ELECTRICO, PLANTA, HIELO, BICHO, PSIQUICO, TIERRA, VOLADOR, VENENO, LUCHA, ROCA, ACERO,HADA,FANTASMA;
 
     public static double obtenerMultiplicadorDeDaño(TipoPokemon atacante, TipoPokemon defensor) {
