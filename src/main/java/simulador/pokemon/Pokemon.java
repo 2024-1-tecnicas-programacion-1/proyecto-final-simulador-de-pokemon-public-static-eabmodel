@@ -1,72 +1,58 @@
 package simulador.pokemon;
 
 public abstract class Pokemon {
-    private String nombre;
-    private double salud;
-    private double puntosDeAtaque;
-    private String tipo;
-    private String estado;
+    protected String nombre;
+    protected int salud;
+    protected int puntosDeAtaque;
+    protected TipoPokemon tipo;
+    protected String estado;
 
-    public Pokemon (String nombre, double salud, double puntosDeAtaque, String tipo, String estado){
+    public Pokemon(String nombre, int salud, int puntosDeAtaque, TipoPokemon tipo) {
         this.nombre = nombre;
         this.salud = salud;
         this.puntosDeAtaque = puntosDeAtaque;
         this.tipo = tipo;
-        this.estado = estado;
-    }//cierra constructor
+        this.estado = "Normal";
+    }
 
-    public String getNombre(){
-        return this.nombre;
-    }//cierra getNombre
+    public void atacar(Pokemon oponente) {
+        double multiplicador = TipoPokemon.obtenerMultiplicadorDeDaño(this.tipo, oponente.tipo);
+        int daño = (int)(this.puntosDeAtaque * multiplicador);
+        oponente.recibirDaño(daño);
+        System.out.println(this.nombre + " ataca a " + oponente.nombre + " y causa " + daño + " puntos de daño.");
+    }
 
-    public void setNombre(String nombre){
-        this.nombre = nombre;
-    }//cierra setNombre
-
-    public double getSalud(){
-        return this.salud;
-    }//cierra getSalud
-
-    public void setSalud(double salud){
-        this.salud = salud;
-    }//cierra setSalud
-
-    public double getPuntosDeAtaque(){
-        return this.puntosDeAtaque;
-    }//cierra getPuntosDeAtaque
-
-    public void setPuntosDeAtaque(double puntosDeAtaque){
-        this.puntosDeAtaque = puntosDeAtaque;
-    }//cierra setPuntosDeAtaque
-
-    public String getTipo(){
-        return this.tipo;
-    }//cierra getTipo
-
-    public void setTipo(String tipo){
-        this.tipo = tipo;
-    }//cierra setTipo
-
-    public String getEstado(){
-        return this.estado;
-    }//cierra getEstado
-
-    public void setEstado(String estado){
-        this.estado = estado;
-    }//cierra setEstado
-
-    public void atacar(Pokemon oponente) { 
-     int danio = (int)(this.puntosDeAtaque * TipoPokemon.obtenerMultiplicador(this.tipo, oponente.tipo));
-     oponente.recibirDaño(danio);
-    }  
-    public abstract int recibirDaño();
-     this.salud -= danio;
-    //Revisar tipo de dato //"int daño" //Esperar indicacion del profe
+    public void recibirDaño(int daño) {
+        this.salud -= daño;
+        if (this.salud <= 0) {
+            this.salud = 0;
+            this.estado = "Debilitado";
+            System.out.println(this.nombre + " ha sido debilitado.");
+        }
+    }
 
     public void entrenar() {
-        this.puntosDeAtaque += 5;
-        this.salud += 10;
+        this.puntosDeAtaque += 10;
+        System.out.println(this.nombre + " ha sido entrenado. Puntos de ataque aumentados a " + this.puntosDeAtaque);
     }
-    //Revisar tipo de dato //"daño" //Esperar indicacion del profe
 
-}//cierra class
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getSalud() {
+        return salud;
+    }
+
+    public int getPuntosDeAtaque() {
+        return puntosDeAtaque;
+    }
+
+    public TipoPokemon getTipo() {
+        return tipo;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+}

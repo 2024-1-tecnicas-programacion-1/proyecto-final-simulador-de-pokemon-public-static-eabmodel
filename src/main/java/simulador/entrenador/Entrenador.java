@@ -2,12 +2,12 @@ package simulador.entrenador;
 
 import java.util.*;
 import simulador.pokemon.Pokemon;
-import simulador.pokemon.TipoPokemon;
+
 
 public class Entrenador {
     private String nombre;
     private LinkedList <Pokemon> pokemones = new LinkedList<>();
-
+   
     Scanner sc = new Scanner(System.in);
     
     // Constructor //
@@ -31,25 +31,21 @@ public class Entrenador {
     public LinkedList<Pokemon> getPokemones(){
         return this.pokemones;
     }//cierra getPokemones
-    
-    public void setPokemones(){
-        this.pokemones = pokemones; //TODO:¿Por qué amarillo?
-    }//cierra getPokemones
+ 
 
 
     //Metodos//
     
     public void agregarPokemon(Pokemon pokemon){
         pokemones.add(pokemon);
-    }//cierra agregarPokemon //TODO: Ni idea de como agregarlos 👀
+        System.out.println("El pokemon" + getNombre() + "fue agregado"); 
+    }//cierra agregarPokemon ✅
 
     public void entrenarPokemon(Pokemon pokemon){
         mostrarPokemon();
         System.out.println("Indique el pokémon a entrenar:");
-        String palabraDeBusqueda = sc.nextLine();        
-        //TipoPokemon.entrenar(buscarPokemon(palabraDeBusqueda));
-        
-    }//cierra entrenarPokemon  TODO: esperar explicacion del profe 👀
+        pokemon.entrenar();    
+    }//cierra entrenarPokemon TODO:revisar 👀
 
     public void mostrarPokemon(){
         for (Pokemon pokemon : pokemones) {
@@ -72,5 +68,6 @@ public class Entrenador {
         String word = sc.nextLine();
         return buscarPokemon(word);
     }//cierra prepararBatalla ✅
-        
+    
+   
 }//cierra class

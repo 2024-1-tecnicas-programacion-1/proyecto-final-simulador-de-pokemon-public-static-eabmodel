@@ -19,7 +19,7 @@ public class Batalla {
       }//cierra while
       
       if (pokemon1.getSalud() <= 0) {
-         ganador = pokemon2.getNombre();
+         ganador = pokemon1.getNombre();
       } else {
          ganador = pokemon2.getNombre();
       }//cierra if
