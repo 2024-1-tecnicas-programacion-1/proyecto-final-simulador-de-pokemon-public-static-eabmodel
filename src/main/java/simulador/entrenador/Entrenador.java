@@ -1,21 +1,23 @@
 package simulador.entrenador;
 
 import java.util.*;
-
 import simulador.Principal;
 import simulador.pokemon.Pokemon;
 
 
-public class Entrenador {
+public class Entrenador { //✅
     private String nombre;
-    private LinkedList <Pokemon> pokemones = new LinkedList<>();
+    private LinkedList <Pokemon> pokeLista = new LinkedList<>();
     
+
+
     // Constructor //
 
-    public Entrenador(String nombre, LinkedList<Pokemon> pokemones) {
+    public Entrenador(String nombre, LinkedList<Pokemon> pokemones) { //✅
         this.nombre = nombre;
-        this.pokemones = pokemones;
+        this.pokeLista = pokemones;
     }//cierra constructor
+
 
 
     //Getters y Setters//
@@ -28,45 +30,60 @@ public class Entrenador {
         this.nombre = nombre;
     }//cierra setNombre
 
-    public LinkedList<Pokemon> getPokemones(){ //✅
-        return this.pokemones;
+    public LinkedList<Pokemon> getPokeLista(){ //✅
+        return this.pokeLista;
     }//cierra getPokemones
+
+    public void setPokelista(){ //TODO: ¿Por qué amarillo?
+        this.pokeLista = pokeLista;
+    }//cierra setPokelista
  
 
 
     //Metodos//
     
     public void agregarPokemon(Pokemon pokemon){ //✅
-        pokemones.add(pokemon);
-        System.out.println("El pokemon" + getNombre() + "fue agregado"); 
+        pokeLista.add(pokemon); 
     }//cierra agregarPokemon
 
     public void entrenarPokemon(Pokemon pokemon){ //✅
-        double daño = pokemon.getPuntosDeAtaque()+20;
         double salud = pokemon.getSalud()+5;
+        double daño = pokemon.getPuntosDeAtaque()+20;
     }//cierra entrenarPokemon
 
-    public void mostrarPokemon(){
-        for (Pokemon pokemon : pokemones) {
-            System.out.println(pokemon.getNombre());
+    public void mostrarPokemones(){ //✅
+        for (int i = 0; i < pokeLista.size(); i++) {
+            String pokeItem = pokeLista.get(i).getNombre();
+            System.out.println("(" + i + ") | " + pokeItem);
         }//cierra for
-    }//cierra mostrarPokemon ✅
+    }//cierra mostrarPokemon
 
-    public Pokemon buscarPokemon(String palabraDeBusqueda){
-        for (Pokemon pokemon : pokemones) {
-            if(pokemon.getNombre().equals(palabraDeBusqueda)){
-                return pokemon;
-            }//cierra if
-        }//cierra for
-        return null; //¿Esto está bien? 👀
-    }//cierra buscarPokemon 👀
+    public Pokemon prepararBatalla(){ //✅
+        if (pokeLista.isEmpty() != true) {
 
-    public Pokemon prepararBatalla(){
-        mostrarPokemon();
-        System.out.println("Seleccione el pokémon para la batalla:");
-        String word = sc.nextLine();
-        return buscarPokemon(word);
-    }//cierra prepararBatalla ✅
-    
-   
+            System.out.println("");
+            System.out.println(" > > > TUS POKEMONES DISPONIBLES < < <");
+            System.out.println("");
+
+            mostrarPokemones();
+
+            System.out.println("");
+            System.out.println("Elige tu pokémon para luchar.");
+            
+            String palabraDeBusqueda = null ; //TODO: @Brian, aquí va el scanner.
+            
+            for (int i = 0; i < pokeLista.size(); i++) {
+                String pokemonBusqueda = pokeLista.get(i).getNombre();
+                if (palabraDeBusqueda.equals(pokeLista)){
+                    Pokemon pokemonBatalla = pokeLista.get(i);
+                    return pokemonBatalla;
+                }//cierra if
+            }//cierra for
+        } else {
+            System.out.println("No tienes pokemones disponibles para luchar.");
+        }//cierra for-else
+
+        return null;
+    }//cierra prepararBatalla
+
 }//cierra class
