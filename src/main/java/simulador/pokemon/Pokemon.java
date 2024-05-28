@@ -2,8 +2,8 @@ package simulador.pokemon;
 
 public abstract class Pokemon {
     protected String nombre;
-    protected int salud;
-    protected int puntosDeAtaque;
+    protected double salud;
+    protected double puntosDeAtaque;
     protected TipoPokemon tipo;
     protected String estado;
 

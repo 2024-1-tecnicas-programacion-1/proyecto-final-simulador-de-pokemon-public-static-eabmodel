@@ -1,14 +1,14 @@
 package simulador.entrenador;
 
 import java.util.*;
+
+import simulador.Principal;
 import simulador.pokemon.Pokemon;
 
 
 public class Entrenador {
     private String nombre;
     private LinkedList <Pokemon> pokemones = new LinkedList<>();
-   
-    Scanner sc = new Scanner(System.in);
     
     // Constructor //
 
@@ -20,15 +20,15 @@ public class Entrenador {
 
     //Getters y Setters//
 
-    public String getNombre(){
+    public String getNombre(){ //✅
         return this.nombre;
     }//cierra getNombre
 
-    public void setNombre (String nombre){
+    public void setNombre (String nombre){ //✅
         this.nombre = nombre;
     }//cierra setNombre
 
-    public LinkedList<Pokemon> getPokemones(){
+    public LinkedList<Pokemon> getPokemones(){ //✅
         return this.pokemones;
     }//cierra getPokemones
  
@@ -36,16 +36,15 @@ public class Entrenador {
 
     //Metodos//
     
-    public void agregarPokemon(Pokemon pokemon){
+    public void agregarPokemon(Pokemon pokemon){ //✅
         pokemones.add(pokemon);
         System.out.println("El pokemon" + getNombre() + "fue agregado"); 
-    }//cierra agregarPokemon ✅
+    }//cierra agregarPokemon
 
-    public void entrenarPokemon(Pokemon pokemon){
-        mostrarPokemon();
-        System.out.println("Indique el pokémon a entrenar:");
-        pokemon.entrenar();    
-    }//cierra entrenarPokemon TODO:revisar 👀
+    public void entrenarPokemon(Pokemon pokemon){ //✅
+        double daño = pokemon.getPuntosDeAtaque()+20;
+        double salud = pokemon.getSalud()+5;
+    }//cierra entrenarPokemon
 
     public void mostrarPokemon(){
         for (Pokemon pokemon : pokemones) {
