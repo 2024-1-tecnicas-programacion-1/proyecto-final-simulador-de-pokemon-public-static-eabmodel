@@ -1,5 +1,9 @@
 package simulador.pokemon;
 
-public enum Estado {
+import java.io.Serializable;
+
+public enum Estado implements Serializable {
+
     NORMAL, DEBILITADO;
+    
 }//cierra enum

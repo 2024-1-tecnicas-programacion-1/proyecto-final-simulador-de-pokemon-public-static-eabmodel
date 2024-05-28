@@ -1,7 +1,6 @@
 package simulador.entrenador;
 
 import java.util.*;
-import simulador.Principal;
 import simulador.pokemon.Pokemon;
 
 

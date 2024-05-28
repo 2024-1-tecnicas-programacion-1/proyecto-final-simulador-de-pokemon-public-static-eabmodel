@@ -1,58 +1,73 @@
 package simulador.pokemon;
 
-public abstract class Pokemon {
+import java.io.Serializable;
+
+public abstract class Pokemon implements Serializable{
     protected String nombre;
     protected double salud;
     protected double puntosDeAtaque;
     protected TipoPokemon tipo;
-    protected String estado;
+    protected Estado estado;
+
+
+
+    // Constructor //
 
     public Pokemon(String nombre, double salud, double puntosDeAtaque, TipoPokemon tipo) {
         this.nombre = nombre;
         this.salud = salud;
         this.puntosDeAtaque = puntosDeAtaque;
         this.tipo = tipo;
-        this.estado = "Normal";
-    }
+        this.estado = Estado.NORMAL;
+    }//cierra constructor
 
-    public void atacar(Pokemon oponente) {
-        double multiplicador = TipoPokemon.obtenerMultiplicadorDeDaño(this.tipo, oponente.tipo);
-        int daño = (int)(this.puntosDeAtaque * multiplicador);
-        oponente.recibirDaño(daño);
-        System.out.println(this.nombre + " ataca a " + oponente.nombre + " y causa " + daño + " puntos de daño.");
-    }
 
-    public void recibirDaño(int daño) {
-        this.salud -= daño;
-        if (this.salud <= 0) {
-            this.salud = 0;
-            this.estado = "Debilitado";
-            System.out.println(this.nombre + " ha sido debilitado.");
-        }
-    }
 
-    public void entrenar() {
-        this.puntosDeAtaque += 10;
-        System.out.println(this.nombre + " ha sido entrenado. Puntos de ataque aumentados a " + this.puntosDeAtaque);
-    }
+    // Getters & Setters //
 
     public String getNombre() {
         return nombre;
-    }
+    }//cierra getNombre
 
-    public int getSalud() {
+    public double getSalud() {
         return salud;
-    }
+    }//cierra getSalud
 
-    public int getPuntosDeAtaque() {
+    public double getPuntosDeAtaque() {
         return puntosDeAtaque;
-    }
+    }//cierra getPuntosDeAtaque
 
     public TipoPokemon getTipo() {
         return tipo;
+    }//cierra getTipo
+
+    public Estado getEstado() {
+        return estado;
+    }//cierra getEstado
+
+
+
+    // Métodos //
+
+    public void atacar(Pokemon oponente) { //🅿️
+        double saludOponente = oponente.getSalud();
+        double multiplicador = TipoPokemon.obtenerMultiplicadorDeDaño(this.tipo, oponente.getTipo());
+        double daño = saludOponente - (this.puntosDeAtaque * multiplicador);
+        //oponente.setSalud(daño); //TODO: revisar esto.
+    }//cierra atacar
+
+    public void recibirDaño(int daño) { //🅿️
+        this.salud -= daño;
+        if (this.salud <= 0) {
+            this.salud = 0;
+            this.estado = Estado.DEBILITADO;
+            System.out.println(this.nombre + " ha sido debilitado.");
+        }//cierra if
+    }//cierra recibirDaño
+
+    public void entrenar() { //🅿️
+        this.puntosDeAtaque += 10;
     }
 
-    public String getEstado() {
-        return estado;
-    }
+    
 }
