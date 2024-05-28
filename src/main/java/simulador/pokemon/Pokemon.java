@@ -56,7 +56,7 @@ public abstract class Pokemon implements Serializable{
         //oponente.setSalud(daño); //TODO: revisar esto.
     }//cierra atacar
 
-    public void recibirDaño(int daño) { //🅿️
+    public void recibirDaño(double daño) { //🅿️
         this.salud -= daño;
         if (this.salud <= 0) {
             this.salud = 0;
