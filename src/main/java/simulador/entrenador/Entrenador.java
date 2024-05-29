@@ -4,6 +4,7 @@ import java.util.*;
 
 import simulador.Principal;
 import simulador.pokemon.Pokemon;
+import simulador.pokemon.TipoPokemon;
 
 
 public class Entrenador { //✅
@@ -61,7 +62,8 @@ public class Entrenador { //✅
             String pokeNombre = pokeLista.get(i).getNombre();
             double pokeSalud = pokeLista.get(i).getSalud();
             double pokeAtaque = pokeLista.get(i).getPuntosDeAtaque();
-            System.out.println("(" + (i+1) + ") | " + pokeNombre + " -> Salud: " + pokeSalud + " -> Ataque: " + pokeAtaque + " |");
+            TipoPokemon pokeTipo = pokeLista.get(i).getTipo();
+            System.out.println("(" + (i+1) + ") | " + pokeNombre + " | Salud -> " + pokeSalud + " | Ataque -> " + pokeAtaque + " | Tipo -> " + pokeTipo + " |");
         }//cierra for
     }//cierra mostrarPokemon
 
@@ -69,7 +71,7 @@ public class Entrenador { //✅
         if (pokeLista.isEmpty() != true) {
 
             System.out.println("");
-            System.out.println(" > > > TUS POKEMONES DISPONIBLES < < <");
+            System.out.println(" > > > Tus Pokémon Disponibles < < <");
             System.out.println("");
 
             mostrarPokemones();
