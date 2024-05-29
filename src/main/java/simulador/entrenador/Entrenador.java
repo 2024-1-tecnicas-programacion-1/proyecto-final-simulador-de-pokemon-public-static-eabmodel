@@ -8,7 +8,7 @@ import simulador.pokemon.Pokemon;
 
 public class Entrenador { //✅
     private String nombre;
-    private LinkedList <Pokemon> pokeLista;
+    private static LinkedList <Pokemon> pokeLista;
     
 
 
@@ -16,7 +16,7 @@ public class Entrenador { //✅
 
     public Entrenador(String nombre) { //✅
         this.nombre = nombre;
-        this.pokeLista = new LinkedList<>();
+        Entrenador.pokeLista = new LinkedList<>();
     }//cierra constructor
 
 
@@ -56,7 +56,7 @@ public class Entrenador { //✅
         
     }//cierra entrenarPokemon
 
-    public void mostrarPokemones(){ //✅
+    public static void mostrarPokemones(){ //✅
         for (int i = 0; i < pokeLista.size(); i++) {
             String pokeNombre = pokeLista.get(i).getNombre();
             double pokeSalud = pokeLista.get(i).getSalud();
