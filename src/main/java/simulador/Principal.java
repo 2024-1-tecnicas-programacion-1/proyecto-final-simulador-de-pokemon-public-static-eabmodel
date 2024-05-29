@@ -43,7 +43,7 @@ public class Principal {
         LinkedList<Pokemon> pokemonesDisponibles = new LinkedList<>();
         
                             // 🚫 N O   D E S C O M E N T A R 🚫 //
-        // <> <> <> <> <> <> INICIALIZACIÓN DE DATOS <> <> <> <> <> <> //
+        /*/ <> <> <> <> <> <> INICIALIZACIÓN DE DATOS <> <> <> <> <> <> //
 
         Pokemon Articuno = new Articuno("Articuno", 90, 85, TipoPokemon.HIELO.VOLADOR); //🅿️
         pokemonesDisponibles.add(Articuno);
@@ -335,7 +335,10 @@ public class Principal {
 
         wait(4);
         
-        //TODO: @Brian Aquí va la lista de entrenadores de la linea 191.
+        for (int i = 0; i < pokeEntrenadores.size(); i++) {
+            String pokeItem = pokeEntrenadores.get(i).getNombre();
+            System.out.println("(" + (i+1) + ") | " + pokeItem);
+        }//cierra for
 
         busquedaEntrenador(busquedaLimpia());
 
@@ -595,6 +598,8 @@ public class Principal {
         System.out.println("» » » Saliendo de PokeMondonGo « « «");
         System.out.println(" \n \n \n \n \n \n "); //Espacio visual
 
+        guardarPartida(LinkedList<Pokemon> pokemonesDisponibles, "ListaDePokemones.pokemondongo");
+        
         wait(5);
 
         System.out.print("🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨\n" + //
@@ -628,7 +633,7 @@ public class Principal {
 
     // () () () () () () () () () TIEMPO DE ESPERA () () () () () () () () () //
 
-    public static void wait(int sec){
+    public static void wait(int sec){ //✅
         try { //TODO: Preguntarle al profe si se puede quitar.
             Thread.sleep(sec * 300);
          } catch (Exception e) {
@@ -638,7 +643,7 @@ public class Principal {
 
     // () () () () () () () () () INTERFAZ DE CARGA () () () () () () () () () //
 
-    public static void interfazDeCarga(){
+    public static void interfazDeCarga(){ //✅
 
         System.out.println(" \n \n \n \n \n "); //Espacio visual
         System.out.println("Cargando...");
@@ -648,7 +653,7 @@ public class Principal {
 
     // () () () () () () () () () INTERFAZ POKEMONDONGO () () () () () () () () () //
 
-    public static void interfazPokeMondonGo(){
+    public static void interfazPokeMondonGo(){ //✅
 
         wait(6);
         
