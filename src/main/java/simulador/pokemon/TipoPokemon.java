@@ -39,11 +39,13 @@ public enum TipoPokemon implements Serializable {
                 if (defensor == VENENO || defensor == VOLADOR || defensor == PSIQUICO || defensor == BICHO || defensor == HADA) return 0.5;
                 if (defensor == FANTASMA) return 0.0;
                 break;
+                
+            default:
+                return 1.0;
 
         }//cierra switch
+        return 0;
 
-        return 1.0; // TODO: preguntarle al profe ¿1.0?
-    
     }//cierra obtenerMultiplicadorDeDaño
 
 }//cierra enum

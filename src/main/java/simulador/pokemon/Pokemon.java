@@ -76,13 +76,10 @@ public abstract class Pokemon implements Serializable{
         }//cierra if
     }//cierra recibirDaño
 
-    public void entrenar() { //🅿️ //Entrenador.entrenarPokemon()
+    public void entrenar() {//✅
 
-        double entrenamientoAtaque = 20;
-        this.setPuntosDeAtaque(entrenamientoAtaque);
-
-        double entrenamientoSalud = 5;
-        this.setSalud(entrenamientoSalud);
+        this.puntosDeAtaque += 20;
+        this.salud += 5;
 
     }//cierra entrenar
 
