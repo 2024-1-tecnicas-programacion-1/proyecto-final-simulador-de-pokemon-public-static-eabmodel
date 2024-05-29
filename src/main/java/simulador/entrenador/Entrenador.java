@@ -1,20 +1,22 @@
 package simulador.entrenador;
 
 import java.util.*;
+
+import simulador.Principal;
 import simulador.pokemon.Pokemon;
 
 
 public class Entrenador { //✅
     private String nombre;
-    private static LinkedList <Pokemon> pokeLista = new LinkedList<>();
+    private LinkedList <Pokemon> pokeLista;
     
 
 
     // Constructor //
 
-    public Entrenador(String nombre, LinkedList<Pokemon> pokeLista) { //✅
+    public Entrenador(String nombre) { //✅
         this.nombre = nombre;
-        this.pokeLista = pokeLista;
+        this.pokeLista = new LinkedList<>();
     }//cierra constructor
 
 
@@ -30,29 +32,36 @@ public class Entrenador { //✅
     }//cierra setNombre
 
     public LinkedList<Pokemon> getPokeLista(){ //✅
-        return this.pokeLista;
+        return pokeLista;
     }//cierra getPokemones
-
-    public void setPokelista(){ //TODO: ¿Por qué amarillo?
-        this.pokeLista = pokeLista;
-    }//cierra setPokelista
  
 
 
     //Metodos//
     
     public void agregarPokemon(Pokemon pokemon){ //✅
-        pokeLista.add(pokemon); 
+        pokeLista.add(pokemon);
     }//cierra agregarPokemon
 
     public void entrenarPokemon(Pokemon pokemon){ //✅
-        pokemon.entrenar();
+
+        if (pokeLista.isEmpty()) {
+            System.out.println("No tienes pokemones para entrenar.");
+        } else if (pokeLista.contains(pokemon)) {
+            pokemon.entrenar();
+        } else {
+            System.out.println("El pokémon no se encuentra en tu Pokédex.");
+            //TODO: añadir regreso.
+        }//cierra if-else
+        
     }//cierra entrenarPokemon
 
-    public static void mostrarPokemones(){ //✅
+    public void mostrarPokemones(){ //✅
         for (int i = 0; i < pokeLista.size(); i++) {
-            String pokeItem = pokeLista.get(i).getNombre();
-            System.out.println("(" + (i+1) + ") | " + pokeItem);
+            String pokeNombre = pokeLista.get(i).getNombre();
+            double pokeSalud = pokeLista.get(i).getSalud();
+            double pokeAtaque = pokeLista.get(i).getPuntosDeAtaque();
+            System.out.println("(" + (i+1) + ") | " + pokeNombre + " -> Salud: " + pokeSalud + " -> Ataque: " + pokeAtaque + " |");
         }//cierra for
     }//cierra mostrarPokemon
 
@@ -66,17 +75,12 @@ public class Entrenador { //✅
             mostrarPokemones();
 
             System.out.println("");
-            System.out.println("Elige tu pokémon para luchar.");
+            System.out.println("Digita el número de tu pokémon para luchar: ");
             
-            String palabraDeBusqueda = null ; //TODO: @Brian, aquí va el scanner.
+            Pokemon pokemonBatalla = pokeLista.get(Principal.check());
+
+            return pokemonBatalla;
             
-            for (int i = 0; i < pokeLista.size(); i++) {
-                String pokemonBusqueda = pokeLista.get(i).getNombre();
-                if (palabraDeBusqueda.equals(pokeLista)){
-                    Pokemon pokemonBatalla = pokeLista.get(i);
-                    return pokemonBatalla;
-                }//cierra if
-            }//cierra for
         } else {
             System.out.println("No tienes pokemones disponibles para luchar.");
         }//cierra for-else
