@@ -6,15 +6,15 @@ import simulador.pokemon.Pokemon;
 
 public class Entrenador { //✅
     private String nombre;
-    private LinkedList <Pokemon> pokeLista = new LinkedList<>();
+    private static LinkedList <Pokemon> pokeLista = new LinkedList<>();
     
 
 
     // Constructor //
 
-    public Entrenador(String nombre, LinkedList<Pokemon> pokemones) { //✅
+    public Entrenador(String nombre, LinkedList<Pokemon> pokeLista) { //✅
         this.nombre = nombre;
-        this.pokeLista = pokemones;
+        this.pokeLista = pokeLista;
     }//cierra constructor
 
 
@@ -46,14 +46,13 @@ public class Entrenador { //✅
     }//cierra agregarPokemon
 
     public void entrenarPokemon(Pokemon pokemon){ //✅
-        double salud = pokemon.getSalud()+5;
-        double daño = pokemon.getPuntosDeAtaque()+20;
+        pokemon.entrenar();
     }//cierra entrenarPokemon
 
-    public void mostrarPokemones(){ //✅
+    public static void mostrarPokemones(){ //✅
         for (int i = 0; i < pokeLista.size(); i++) {
             String pokeItem = pokeLista.get(i).getNombre();
-            System.out.println("(" + i + ") | " + pokeItem);
+            System.out.println("(" + (i+1) + ") | " + pokeItem);
         }//cierra for
     }//cierra mostrarPokemon
 
