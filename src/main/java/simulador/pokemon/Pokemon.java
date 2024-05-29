@@ -25,38 +25,49 @@ public abstract class Pokemon implements Serializable{
 
     // Getters & Setters //
 
-    public String getNombre() {
+    public String getNombre() { //✅
         return nombre;
     }//cierra getNombre
 
-    public double getSalud() {
+    public double getSalud() { //✅
         return salud;
     }//cierra getSalud
 
-    public double getPuntosDeAtaque() {
+    public double getPuntosDeAtaque() { //✅
         return puntosDeAtaque;
     }//cierra getPuntosDeAtaque
 
-    public TipoPokemon getTipo() {
+    public TipoPokemon getTipo() { //✅
         return tipo;
     }//cierra getTipo
 
-    public Estado getEstado() {
+    public Estado getEstado() { //✅
         return estado;
     }//cierra getEstado
+
+    public void setNombre (String nombre){ //✅
+        this.nombre = nombre;
+    }//cierra setNombre
+
+    public void setSalud (double salud){ //✅
+        this.salud = salud;
+    }//cierra setSalud
+
+    public void setPuntosDeAtaque (double puntosDeAtaque){ //✅
+        this.puntosDeAtaque = puntosDeAtaque;
+    }//cierra setSalud
 
 
 
     // Métodos //
 
-    public void atacar(Pokemon oponente) { //🅿️
+    public void atacar(Pokemon oponente) { //✅
         double saludOponente = oponente.getSalud();
         double multiplicador = TipoPokemon.obtenerMultiplicadorDeDaño(this.tipo, oponente.getTipo());
-        double daño = saludOponente - (this.puntosDeAtaque * multiplicador);
-        //oponente.setSalud(daño); //TODO: revisar esto.
+        oponente.recibirDaño(saludOponente - (this.puntosDeAtaque * multiplicador));
     }//cierra atacar
 
-    public void recibirDaño(double daño) { //🅿️
+    public void recibirDaño(double daño) { //✅
         this.salud -= daño;
         if (this.salud <= 0) {
             this.salud = 0;
@@ -65,9 +76,14 @@ public abstract class Pokemon implements Serializable{
         }//cierra if
     }//cierra recibirDaño
 
-    public void entrenar() { //🅿️
-        this.puntosDeAtaque += 10;
-    }
+    public void entrenar() { //🅿️ //Entrenador.entrenarPokemon()
 
-    
+        double entrenamientoAtaque = 20;
+        this.setPuntosDeAtaque(entrenamientoAtaque);
+
+        double entrenamientoSalud = 5;
+        this.setSalud(entrenamientoSalud);
+
+    }//cierra entrenar
+
 }
