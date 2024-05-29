@@ -2,8 +2,9 @@ package simulador.pokemon;
 
 import java.io.Serializable;
 
+@SuppressWarnings("unused")
 public enum TipoPokemon implements Serializable {
-    NORMAL, FUEGO, AGUA, ELECTRICO, PLANTA, HIELO, BICHO, PSIQUICO, TIERRA, VOLADOR, VENENO, LUCHA, ROCA, ACERO,HADA,FANTASMA;
+    FUEGO, AGUA, PLANTA, VENENO, ELECTRICO, PSIQUICO, ROCA, TIERRA, NORMAL, VOLADOR, HADA, LUCHA, ACERO, BICHO, HIELO, FANTASMA; 
 
     public static double obtenerMultiplicadorDeDaño(TipoPokemon atacante, TipoPokemon defensor) {
         switch (atacante) {
