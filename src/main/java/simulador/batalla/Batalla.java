@@ -6,7 +6,7 @@ public class Batalla {
    
    public String iniciarBatalla(Pokemon pokemon1, Pokemon pokemon2){
       
-      String ganador;
+      String nombrePokemonGanador;
 
       while (pokemon1.getSalud() > 0 && pokemon2.getSalud() > 0) {
          
@@ -18,13 +18,16 @@ public class Batalla {
 
       }//cierra while
       
-      if (pokemon1.getSalud() <= 0) {
-         ganador = pokemon1.getNombre();
+      if (pokemon1.getSalud() > 0) {
+         nombrePokemonGanador = pokemon1.getNombre();
+      } else if (pokemon2.getSalud() > 0) {
+         nombrePokemonGanador = pokemon2.getNombre();
       } else {
-         ganador = pokemon2.getNombre();
-      }//cierra if
+         nombrePokemonGanador = "Error de ganador.";
+      }//cierra else-if
 
-      return ganador;
+      return nombrePokemonGanador;
+      
    }//cierra iniciarBatalla
 
 }//cierra class
