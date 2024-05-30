@@ -47,24 +47,35 @@ public class Entrenador { //✅
     public void entrenarPokemon(Pokemon pokemon){ //✅
 
         if (pokeLista.isEmpty()) {
-            System.out.println("No tienes pokemones para entrenar.");
+            System.out.println(" \n \n \n \n \n \n"); //Espacio visual
+            System.out.println("¡ O tus pokemones están de vacaciones o no tienes !");
+            System.out.println(" \n \n "); //Espacio visual
         } else if (pokeLista.contains(pokemon)) {
             pokemon.entrenar();
         } else {
-            System.out.println("El pokémon no se encuentra en tu Pokédex.");
+            System.out.println("El pokémon no se encuentra en tu inventario.");
             //TODO: añadir regreso.
         }//cierra if-else
         
     }//cierra entrenarPokemon
 
     public static void mostrarPokemones(){ //✅
-        for (int i = 0; i < pokeLista.size(); i++) {
-            String pokeNombre = pokeLista.get(i).getNombre();
-            double pokeSalud = pokeLista.get(i).getSalud();
-            double pokeAtaque = pokeLista.get(i).getPuntosDeAtaque();
-            TipoPokemon pokeTipo = pokeLista.get(i).getTipo();
-            System.out.println("(" + (i+1) + ") | " + pokeNombre + " | Salud -> " + pokeSalud + " | Ataque -> " + pokeAtaque + " | Tipo -> " + pokeTipo + " |");
-        }//cierra for
+        if (pokeLista.isEmpty()) {
+            System.out.println(" \n \n \n \n \n \n"); //Espacio visual
+            System.out.println("¡ Oh oh, no hay pokemones por aquí !");
+            System.out.println(" \n \n "); //Espacio visual
+        } else {
+
+            for (int i = 0; i < pokeLista.size(); i++) {
+                String pokeNombre = pokeLista.get(i).getNombre();
+                double pokeSalud = pokeLista.get(i).getSalud();
+                double pokeAtaque = pokeLista.get(i).getPuntosDeAtaque();
+                TipoPokemon pokeTipo = pokeLista.get(i).getTipo();
+                System.out.println("(" + (i+1) + ") | " + pokeNombre + " | Salud -> " + pokeSalud + " | Ataque -> " + pokeAtaque + " | Tipo -> " + pokeTipo + " |");
+            }//cierra for
+
+        }//cierra else-if
+        
     }//cierra mostrarPokemon
 
     public Pokemon prepararBatalla(){ //✅
