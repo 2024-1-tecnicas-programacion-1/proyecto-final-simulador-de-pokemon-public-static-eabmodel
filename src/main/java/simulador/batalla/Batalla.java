@@ -4,7 +4,7 @@ import simulador.pokemon.Pokemon;
 
 public class Batalla {
    
-   public String iniciarBatalla(Pokemon pokemon1, Pokemon pokemon2){
+   public static String iniciarBatalla(Pokemon pokemon1, Pokemon pokemon2){
       
       String nombrePokemonGanador;
 
