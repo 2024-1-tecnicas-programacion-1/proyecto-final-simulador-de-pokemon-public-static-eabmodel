@@ -44,6 +44,8 @@ public class Principal {
     static boolean firstSubMenuSeleccionarEntrenadores = true;
     static boolean firstMenuGestionarPokemones = true;
     static boolean firstMenuIniciarBatalla = true;
+    static boolean verif = true;
+    static String nombrePokemonGanador;
 
     static LinkedList<Pokemon> pokemonesDisponibles = new LinkedList<>();
     static LinkedList<Entrenador> pokeEntrenadores = new LinkedList<>();
@@ -215,7 +217,9 @@ public class Principal {
                 
                 sc.nextLine();//Limpia Scanner
                 String nombreEntrenador = sc.nextLine();
-                pokeEntrenadores.add(new Entrenador(nombreEntrenador));
+
+
+                pokeEntrenadores.add(new Entrenador(nombreEntrenador, new LinkedList<>()));
 
                 System.out.println(" \n \n \n \n \n \n"); //Espacio visual
                 System.out.println("Creando nuevo entrenador...");
@@ -695,7 +699,7 @@ public class Principal {
             case 2: //✅
                 
                 System.out.println(" \n \n \n \n \n \n"); //Espacio visual
-                System.out.println("¡Has seleccionado « Registrar nuevo entrenador » !");     
+                System.out.println("¡Has seleccionado « Registrar nuevo pokémon » !");     
                 System.out.println(" \n \n \n \n \n \n"); //Espacio visual
             
                 wait(5);
@@ -809,6 +813,7 @@ public class Principal {
                         "           '. <`'-._)       | |  |                                    |  |    | (_,-'`> .'\n" + //
                         "            '._)            | |  | » » »      PokeMondonGo      « « « |  |    |     (_,'");
         
+        sc.nextLine(); //Limpia Scanner
         switchIniciarBatalla(check());
     }//cierra menuIniciarBatalla
 
@@ -922,13 +927,18 @@ public class Principal {
             case 5: //🅿️
                 
                 if (pokeEntrenadores.get(entrenadorBatalla1).equals(null) || pokeEntrenadores.get(entrenadorBatalla2).equals(null)) {
-                    System.out.println("F");
+                    System.out.println("> > > Te falta seleccionar un entrenador.");
+                    System.out.println(""); //Espacio visual
+                    miniMenu(7);
                     break;
                 } else if (pokemonBatalla1.equals(null) || pokemonBatalla2.equals(null)) {
-                    System.out.println("F");
+                    System.out.println("> > > Te falta seleccionar un pokémon.");
+                    System.out.println(""); //Espacio visual
+                    miniMenu(7);
                     break;
                 } else {
-                    Batalla.iniciarBatalla(pokemonBatalla1, pokemonBatalla2);
+
+                    Batalla.iniciarBatalla(pokemonBatalla1, pokemonBatalla2, verif, nombrePokemonGanador);
                 }
 
 
@@ -960,6 +970,95 @@ public class Principal {
 
                 break;
             default: //✅
+                System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+                System.out.println("¡ Debes seleccionar una opción válida s!");
+                System.out.println(" \n \n \n \n \n \n "); //Espacio visual
+
+                wait(4);
+
+                menuIniciarBatalla();
+                
+                break;
+        }//cierra switch
+    }//cierra switchIniciarBatalla
+
+    // [] [] [] [] [] [] [] [] [] SUBMENU DURANTE LA BATALLA [] [] [] [] [] [] [] [] [] //
+
+    public static void subMenuDuranteLaBatalla(){ //✅
+        
+        System.out.println(" \n \n \n \n \n \n"); //Espacio visual
+        System.out.println("¡ HA INICIADO LA BATALLA !");   
+        System.out.println(" \n \n \n \n \n \n"); //Espacio visual
+
+        wait(4);
+
+
+        System.out.println("[ " + pokemonBatalla1.getNombre() + " ] VS [ " + pokemonBatalla2.getNombre() + " ]");
+        System.out.println(" \n \n \n \n \n \n"); //Espacio visual
+        
+        wait(3);
+
+        System.out.println("[ " + pokemonBatalla1.getNombre() + " ] VS [ " + pokemonBatalla2.getNombre() + " ]");
+        System.out.println(" \n \n \n \n \n \n"); //Espacio visual TODO: Revisar altura.
+        System.out.println("(1) | "+ pokemonBatalla1.getNombre() + " -> Atacar.");
+        System.out.println("(2) | "+ pokemonBatalla2.getNombre() + " -> Atacar.");
+        System.out.println("(3) | Finalizar batalla.");
+
+
+        switchSubMenuDuranteLaBatalla(check());
+    }//cierra menuIniciarBatalla
+
+    // {} {} {} {} {} {} {} {} {} SWITCH DURANTE LA BATALLA {} {} {} {} {} {} {} {} {} //
+    
+    public static void switchSubMenuDuranteLaBatalla(int option){ //🅿️
+        switch (option){
+            case 1: //✅
+
+                wait(3);
+
+                pokemonBatalla1.atacar(pokemonBatalla2);
+
+                System.out.println("[ " + pokemonBatalla1.getNombre() + " ] VS [ " + pokemonBatalla2.getNombre() + " ]");
+                System.out.println(" \n \n \n"); //Espacio visual TODO: Revisar altura.
+                System.out.println( pokemonBatalla1.getNombre() + " Ha atacado a " + pokemonBatalla2.getNombre());
+                System.out.println(" \n \n \n"); //Espacio visual TODO: Revisar altura.
+
+                wait(5);
+
+                System.out.println("[ " + pokemonBatalla1.getNombre() + " ] VS [ " + pokemonBatalla2.getNombre() + " ]");
+                System.out.println(" \n \n \n"); //Espacio visual TODO: Revisar altura.
+                System.out.println( " ¡ El ataque ha sido eficaz ! ");
+                System.out.println(" \n \n \n"); //Espacio visual TODO: Revisar altura.
+
+                wait(5);
+
+                break;
+            case 2: //✅
+
+                wait(3);
+
+                pokemonBatalla2.atacar(pokemonBatalla1);
+
+                System.out.println("[ " + pokemonBatalla1.getNombre() + " ] VS [ " + pokemonBatalla2.getNombre() + " ]");
+                System.out.println(" \n \n \n"); //Espacio visual TODO: Revisar altura.
+                System.out.println( pokemonBatalla2.getNombre() + " Ha atacado a " + pokemonBatalla1.getNombre());
+                System.out.println(" \n \n \n"); //Espacio visual TODO: Revisar altura.
+
+                wait(5);
+
+                System.out.println("[ " + pokemonBatalla1.getNombre() + " ] VS [ " + pokemonBatalla2.getNombre() + " ]");
+                System.out.println(" \n \n \n"); //Espacio visual TODO: Revisar altura.
+                System.out.println( " ¡ El ataque ha sido eficaz ! ");
+                System.out.println(" \n \n \n"); //Espacio visual TODO: Revisar altura.
+
+                wait(5);
+
+                break;
+            case 3: //🅿️
+                verif = false;
+                System.out.println(nombrePokemonGanador);
+                break;
+            default: //🅿️
                 System.out.println(" \n \n \n \n \n \n "); //Espacio visual
                 System.out.println("¡ Debes seleccionar una opción válida s!");
                 System.out.println(" \n \n \n \n \n \n "); //Espacio visual
@@ -1231,15 +1330,15 @@ public class Principal {
                 wait(4);
                 menuGestionarPokemones();
                 break;
-            case 6: //🅿️
+            case 6: //✅
                 interfazDeCarga();
                 wait(4);
                 menuIniciarBatalla();
                 break;
             case 7: //🅿️
-                //interfazDeCarga();
-                //wait(4);
-                //subMenuDuranteLaBatalle();//TODO: Quitar comentario cuando esté creado.
+                interfazDeCarga();
+                wait(4);
+                subMenuDuranteLaBatalla();
                 break;
             default:
                 break;
