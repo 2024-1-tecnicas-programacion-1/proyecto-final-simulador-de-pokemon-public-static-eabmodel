@@ -15,9 +15,9 @@ public class Entrenador { //✅
 
     // Constructor //
 
-    public Entrenador(String nombre) { //✅
+    public Entrenador(String nombre, LinkedList<Pokemon> pokeLista) { //✅
         this.nombre = nombre;
-        Entrenador.pokeLista = new LinkedList<>();
+        Entrenador.pokeLista = pokeLista;
     }//cierra constructor
 
 
