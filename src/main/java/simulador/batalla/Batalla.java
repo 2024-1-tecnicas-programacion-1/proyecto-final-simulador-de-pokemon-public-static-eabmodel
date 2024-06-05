@@ -5,29 +5,23 @@ import simulador.pokemon.Pokemon;
 
 public class Batalla {
    
+   //Complejidad temporal: O(N) Tiempo lineal
    public static String iniciarBatalla(Pokemon pokemon1, Pokemon pokemon2, boolean verif, String nombrePokemonGanador){
-      
+
+      nombrePokemonGanador = "PEPE";
+
       while (verif == true){
+
          while (pokemon1.getSalud() > 0 && pokemon2.getSalud() > 0) {
             
-            Principal.subMenuDuranteLaBatalla();
-
-            if (pokemon2.getSalud() > 0 ){
-               Principal.subMenuDuranteLaBatalla();
-               pokemon2.atacar(pokemon1);
-            }//cierra if
+            Principal.subMenuDuranteLaBatalla(nombrePokemonGanador);
 
          }//cierra while
          
-         if (pokemon1.getSalud() < 0) {
-            nombrePokemonGanador = pokemon2.getNombre();
-         } else if (pokemon2.getSalud() < 0) {
-            nombrePokemonGanador = pokemon1.getNombre();
-         } else {
-            nombrePokemonGanador = "Error de ganador.";
-         }//cierra else-if
+         verif = false;
          
       }//cierra while
+
       return nombrePokemonGanador;
       
    }//cierra iniciarBatalla

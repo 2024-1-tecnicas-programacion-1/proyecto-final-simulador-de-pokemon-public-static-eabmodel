@@ -61,21 +61,26 @@ public abstract class Pokemon implements Serializable{
 
     // Métodos //
 
-    public void atacar(Pokemon oponente) { //✅
-        double saludOponente = oponente.getSalud();
+    //Complejidad temporal: O(1) Tiempo constante
+    public double atacar(Pokemon oponente) { //✅
         double multiplicador = TipoPokemon.obtenerMultiplicadorDeDaño(this.tipo, oponente.getTipo());
-        oponente.recibirDaño(saludOponente - (this.puntosDeAtaque * multiplicador));
+        double daño = this.puntosDeAtaque * multiplicador;
+        return daño;
     }//cierra atacar
 
+    //Complejidad temporal: O(1) Tiempo constante
     public void recibirDaño(double daño) { //✅
         this.salud -= daño;
         if (this.salud <= 0) {
             this.salud = 0;
             this.estado = Estado.DEBILITADO;
-            System.out.println(this.nombre + " ha sido debilitado.");
+            System.out.println(" \n \n \n \n "); //Espacio visual TODO: Revisar altura.
+            System.out.println(" ⭐️ ⭐️ ⭐️ ¡ " + this.nombre + " ha sido debilitado ! 💤 ⭐️ ⭐️ ⭐️");
+            System.out.println(" \n \n \n \n "); //Espacio visual TODO: Revisar altura.
         }//cierra if
     }//cierra recibirDaño
 
+    //Complejidad temporal: O(1) Tiempo constante
     public void entrenar() {//✅
 
         this.puntosDeAtaque += 20;
@@ -83,4 +88,4 @@ public abstract class Pokemon implements Serializable{
 
     }//cierra entrenar
 
-}
+}//cierra class
